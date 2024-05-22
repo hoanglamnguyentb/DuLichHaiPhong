@@ -775,9 +775,9 @@ ul {
 }
 
     .event-item-icon img {
-        width: 100%;
+        /* width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: contain; */
     }
 
 .potential {
@@ -2108,7 +2108,7 @@ path {
 }
 
 .container img {
-    max-width: 100%;
+    /* max-width: 100%; */
 }
 
 .article p, .article div, .article span, .article strong, .article section {
