@@ -1,0 +1,28 @@
+﻿.menu-user-info {
+    width: 100%;
+    float: left;
+}
+
+    .menu-user-info li {
+        width: 100%;
+        float: left;
+    }
+
+        .menu-user-info li a {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+        }
+
+        .menu-user-info li.active a {
+            background: var(--color-third);
+            color: #fff;
+        }
+
+    .menu-user-info .bl-compute {
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }

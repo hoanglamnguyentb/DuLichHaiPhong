@@ -1,0 +1,50 @@
+﻿
+/*phân trang*/
+/* Style cho phân trang */
+.custom-pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+    .custom-pagination .page-link {
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        float: left;
+        position: relative;
+        margin: 5px;
+        color: #757575;
+        padding: 0;
+        line-height: 35px;
+    }
+
+        .custom-pagination .page-link:hover {
+            background-color: #ddd;
+        }
+
+    .custom-pagination .page-number {
+        display: inline-block;
+        padding: 5px 10px;
+        float: left;
+        width: 35px;
+        height: 35px;
+        padding-top: 10px;
+        border: 1px solid var(--color-third);
+        background: var(--color-third);
+        color: #fff;
+        margin: 5px;
+        line-height: 16px;
+        border-radius: 3px;
+    }
+
+    .custom-pagination .page-number:first-child {
+        margin-left: 0;
+    }
+
+    /* Style cho nút Previous và Next */
+    .custom-pagination .disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }

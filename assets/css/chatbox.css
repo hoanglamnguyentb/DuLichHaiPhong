@@ -1,0 +1,232 @@
+﻿.chat_box {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.content_chatbox {
+    height: 370px;
+    background-color: #fff;
+}
+
+.chat_box > .head_chat_box {
+    padding: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--color-third);
+}
+
+        .chat_box > .head_chat_box > .avata_name_chatbox {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+.avata_name_chatbox > img {
+    width: 17%;
+    margin-right: 4%;
+}
+
+.avata_name_chatbox > strong {
+    white-space: normal;
+    font-size: 16px;
+}
+
+.input_chatbox {
+    background-color: #fff;
+}
+
+.input_chatbox > input {
+    border-radius: 1em;
+}
+
+.content_chatbox {
+    flex-grow: 1;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_chatbox {
+    margin: 4%;
+    position: relative;
+}
+
+    .input_chatbox > input {
+        padding: 3%;
+    }
+
+.send_ask {
+    padding: 4%;
+    background: white;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+    .send_ask:hover {
+        cursor: pointer;
+    }
+
+.reply_ask > .row {
+    float: left;
+    width: 100%;
+}
+
+
+    .reply_ask > .row > .col-sm-9, .ask_person > .content_ask {
+        border-radius: 15px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        text-align: left;
+    }
+
+.reply_ask {
+    margin: 3% 0;
+    float: left;
+}
+
+.ask_person {
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    float: right;
+}
+
+.reply_ask > .row > .col-sm-2 > img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.reply_ask > .row > .col-sm-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_chatbox {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff;
+}
+
+.content_reply {
+    padding: 2%;
+    font-size: 14px;
+}
+
+.content_ask {
+    font-size: 14px;
+    max-width: 75%;
+    float: right;
+    margin-right: 4%;
+    text-align: end;
+    padding: 10px;
+    background: var(--color-third);
+    color: white;
+    position: relative;
+}
+
+    .content_ask::after {
+        position: absolute;
+        top: 50%;
+        right: -3px;
+        display: block;
+        width: 8px;
+        height: 6px;
+        content: " ";
+        background-color: var(--color-third);
+        transform: rotate(29deg) skew(-35deg);
+    }
+
+.option_thaotac {
+    margin-bottom: 15px;
+}
+
+.option_select {
+    font-size: 14px;
+    background: var(--color-third);
+    margin: 2%;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 2%;
+}
+
+    .option_select:hover {
+        cursor: pointer;
+        background: #1e8d98;
+    }
+
+.sugges_address {
+    padding: 2%;
+}
+
+    .sugges_address > span {
+        font-style: italic;
+    }
+
+    .sugges_address > ul {
+        margin-left: 10%;
+        list-style: decimal !important;
+    }
+
+        .sugges_address > ul > li {
+            font-style: italic;
+        }
+
+            .sugges_address > ul > li > a {
+                color: #29adb9;
+                text-decoration: underline;
+            }
+
+                .sugges_address > ul > li > a:hover {
+                    color: #194f54 !important;
+                }
+
+
+.content_chatbox::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+.content_chatbox::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+}
+
+.content_chatbox::-webkit-scrollbar-thumb {
+    background-color: var(--color-third);
+}
+
+.option_select {
+    border-radius: 0.5em;
+    padding: 10px;
+    background-color: #e2e2e2;
+    color: unset;
+    border: 1px solid transparent;
+}
+
+.option_select:hover {
+    background-color: #e2e2e2;
+    border: 1px solid #999;
+    transition: 0.3s;
+}
+
+.content_reply {
+    padding-top: 15px;
+}
+
+.reply_ask .row .col-sm-9 {
+    border-radius: 16px;
+}
