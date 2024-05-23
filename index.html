@@ -98,9 +98,9 @@
 
       .mySwiperPotential .swiper-slide img {
         display: block;
-        /* width: 100%;
-        height: 100%;
-        object-fit: cover; */
+        /*            width: 100%;
+                height: 100%;
+                object-fit: cover;*/
       }
 
       /* Chrome, Safari, Edge, Opera */
@@ -130,7 +130,7 @@
         color: #c57a7a;
       }
 
-      .modal-header {
+      #createConfigTrangChuForm .modal-header {
         display: flex;
         background: #1cb5c2;
         flex-shrink: 0;
@@ -143,13 +143,20 @@
         flex-direction: row-reverse;
       }
 
-      .modal-header > button {
-        padding: 5px;
+      #createConfigTrangChuForm .modal-header > button {
         border-color: transparent;
-        background: red;
-        color: white;
-        font-size: 1em;
-        border-radius: 0.5em;
+        background: white;
+        color: black;
+        font-size: xx-large;
+        border-radius: 1.5em;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-weight: 500;
+        padding-bottom: 0.5%;
       }
     </style>
 
@@ -193,7 +200,9 @@
             <div class="header-social-link">
               <ul class="d-flex">
                 <li>
-                  <a>
+                  <a
+                    href="https://www.youtube.com/channel/UCdcZwa9UUpXp6-F9m0u-e0Q"
+                  >
                     <img
                       src="Uploads/QLLinkDoiTuong/youtube-icon18052024-034810.png"
                       alt="Youtube"
@@ -202,7 +211,9 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a
+                    href="https://www.tiktok.com/@haiphongtourismofficial?lang=en"
+                  >
                     <img
                       src="Uploads/QLLinkDoiTuong/tiktok-icon.png"
                       alt="TikTok"
@@ -211,7 +222,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="https://www.facebook.com/SoDulichHaiPhong">
                     <img
                       src="Uploads/QLLinkDoiTuong/facebook-icon.png"
                       alt="Facebook"
@@ -220,7 +231,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="https://www.instagram.com/haiphongtourism/">
                     <img
                       src="Uploads/QLLinkDoiTuong/instargram-icon18052024-034934.png"
                       alt="Instargram"
@@ -348,13 +359,15 @@
                   <a class="nav-link" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/">Giới thiệu</a>
+                  <a class="nav-link" href="/page/gioi-thieu">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="tour-du-lich">Kh&#225;m ph&#225;</a>
+                  <a class="nav-link" href="/tour-du-lich"
+                    >Kh&#225;m ph&#225;</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="lap-ke-hoach">Lập kế hoạch</a>
+                  <a class="nav-link" href="/lap-ke-hoach">Lập kế hoạch</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/tien-ich-du-lich"
@@ -397,18 +410,20 @@
                     <div class="col-3">
                       <div class="box_items">
                         <header>
-                          <a class="header_link d-flex" href="/gioi-thieu"
+                          <a class="header_link d-flex" href="/page/gioi-thieu"
                             >Giới thiệu</a
                           >
                         </header>
 
                         <ul class="sub_menu scollbar_custom">
                           <li>
-                            <a href="/gioi-thieu" title="Giới thiệu"
+                            <a href="/page/gioi-thieu" title="Giới thiệu"
                               >Giới thiệu</a
                             >
                           </li>
-                          <li><a href="/" title="Tin tức">Tin tức</a></li>
+                          <li>
+                            <a href="/tin-tuc" title="Tin tức">Tin tức</a>
+                          </li>
                           <li>
                             <a href="/su-kien" title="Sự kiện">Sự kiện</a>
                           </li>
@@ -427,24 +442,20 @@
 
                         <ul class="sub_menu scollbar_custom">
                           <li>
-                            <a href="javascript:void(0)" title="Di chuyển"
-                              >Di chuyển</a
-                            >
+                            <a href="/diem-den" title="Di chuyển">Di chuyển</a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)" title="Lưu tr&#250;"
+                            <a href="/co-so-luu-tru" title="Lưu tr&#250;"
                               >Lưu tr&#250;</a
                             >
                           </li>
                           <li>
-                            <a
-                              href="javascript:void(0)"
-                              title="Kh&#225;m ph&#225;"
+                            <a href="/tour-du-lich" title="Kh&#225;m ph&#225;"
                               >Kh&#225;m ph&#225;</a
                             >
                           </li>
                           <li>
-                            <a href="javascript:void(0)" title="Ẩm thực"
+                            <a href="/dia-diem-an-uong" title="Ẩm thực"
                               >Ẩm thực</a
                             >
                           </li>
@@ -460,30 +471,28 @@
                         </header>
 
                         <ul class="sub_menu scollbar_custom">
+                          <li><a href="/vr360" title="VR360">VR360</a></li>
                           <li>
-                            <a href="/tien-ich-du-lich" title="VR360">VR360</a>
-                          </li>
-                          <li>
-                            <a href="/tien-ich-du-lich" title="Bản đồ du lịch"
+                            <a href="/ban-do-du-lich" title="Bản đồ du lịch"
                               >Bản đồ du lịch</a
                             >
                           </li>
                           <li>
-                            <a href="/tien-ich-du-lich" title="Cẩm nang du lịch"
+                            <a
+                              href="javascript:void(0)"
+                              title="Cẩm nang du lịch"
                               >Cẩm nang du lịch</a
                             >
                           </li>
                           <li>
                             <a
-                              href="/tien-ich-du-lich"
+                              href="/goi-y-thong-minh"
                               title="Gợi &#253; th&#244;ng minh"
                               >Gợi &#253; th&#244;ng minh</a
                             >
                           </li>
                           <li>
-                            <a
-                              href="/tien-ich-du-lich"
-                              title="Tạo lịch tr&#236;nh"
+                            <a href="/tin-tuc" title="Tạo lịch tr&#236;nh"
                               >Tạo lịch tr&#236;nh</a
                             >
                           </li>
@@ -503,26 +512,26 @@
                         <ul class="sub_menu scollbar_custom">
                           <li>
                             <a
-                              href="javascript:void(0)"
+                              href="/doanh-nghiep-lu-hanh"
                               title="Doanh nghiệp Lữ h&#224;nh"
                               >Doanh nghiệp Lữ h&#224;nh</a
                             >
                           </li>
                           <li>
-                            <a href="javascript:void(0)" title="C&#226;y xăng"
+                            <a href="/cay-xang" title="C&#226;y xăng"
                               >C&#226;y xăng</a
                             >
                           </li>
                           <li>
                             <a
-                              href="javascript:void(0)"
+                              href="/co-so-kham-chua-benh"
                               title="Cơ sở kh&#225;m chữa bệnh, hiệu thuốc"
                               >Cơ sở kh&#225;m chữa bệnh, hiệu thuốc</a
                             >
                           </li>
                           <li>
                             <a
-                              href="javascript:void(0)"
+                              href="/phuong-tien-cong-cong"
                               title="Phương tiện c&#244;ng cộng"
                               >Phương tiện c&#244;ng cộng</a
                             >
@@ -549,13 +558,11 @@
 
                         <ul class="sub_menu scollbar_custom">
                           <li>
-                            <a href="javascript:void(0)" title="Thư viện ảnh"
+                            <a href="/thu-vien-anh" title="Thư viện ảnh"
                               >Thư viện ảnh</a
                             >
                           </li>
-                          <li>
-                            <a href="javascript:void(0)" title="Video">Video</a>
-                          </li>
+                          <li><a href="/video" title="Video">Video</a></li>
                         </ul>
                       </div>
                     </div>
@@ -576,7 +583,9 @@
                             >
                           </li>
                           <li>
-                            <a href="javascript:void(0)" title="Hỗ trợ khẩn cấp"
+                            <a
+                              href="/page/ho-tro-khan-cap"
+                              title="Hỗ trợ khẩn cấp"
                               >Hỗ trợ khẩn cấp</a
                             >
                           </li>
@@ -694,8 +703,9 @@
           <div class="intro-left">
             <div class="intro-title">
               <div data-keyconfig="HomeFromHaiPhong">from Hai Phong</div>
-              <div class="w-100" data-keyconfig="HomeWithLove">
-                With Love !&nbsp;&nbsp;
+              <div class="w-100">
+                <span data-keyconfig="HomeWithLove">With Love !</span
+                >&nbsp;&nbsp;
               </div>
             </div>
           </div>
@@ -771,7 +781,7 @@
               </div>
               <div class="intro-link-item-title">Ẩm thực</div>
             </a>
-            <a class="intro-link-item col-4 col-lg">
+            <a class="intro-link-item col-4 col-lg" href="/noi-bat">
               <div class="intro-link-item-img">
                 <img
                   src="Uploads/QLLinkDoiTuong/noibat22052024-034030.png"
@@ -797,12 +807,12 @@
       <div class="container">
         <div class="big-event-img">
           <a
-            href="/su-kien/festival-kinh-khi-cau---bay-len-hai-phong-sang-bung-mien-di-san-ojJJpA4FHK-13"
+            href="/su-kien/kite-art-performance-festival-pixafsgV6S-16"
             alt="Sự kiện nổi bật"
           >
             <img
-              src="Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\k1.jpg"
-              alt="Festival Kinh kh&#237; cầu - Bay l&#234;n Hải Ph&#242;ng! S&#225;ng bừng miền di sản"
+              src="Uploads/2024/05/23/admin_1/RegisterTinBai\photo_2024-05-22_09-09-13.jpg"
+              alt=" Kite art performance festival"
               onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
             />
           </a>
@@ -1081,24 +1091,22 @@
             </a>
           </div>
           <div class="row g-3 gx-0">
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
+            <div class="col-12 col-lg-6 news-item-wrapper">
               <div class="news-item">
                 <div class="d-flex gap-3">
                   <div class="news-item-img">
                     <img
-                      src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="Ph&#234; duyệt Chương tr&#236;nh ph&#225;t triển đ&#244; thị th&#224;nh phố Hải Ph&#242;ng định hướng đến năm 2040, tầm nh&#236;n đến năm 2050"
+                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut.png"
+                      alt="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
                     />
                   </div>
                   <div class="news-item-desc">
                     <div class="news-item-title text-truncate-3">
                       <a
-                        href="/tin-tuc/phe-duyet-chuong-trinh-phat-trien-do-thi-thanh-pho-hai-phong-dinh-huong-den-nam-2040-tam-nhin-den-XBY7czWJQO-20024"
-                        title="Ph&#234; duyệt Chương tr&#236;nh ph&#225;t triển đ&#244; thị th&#224;nh phố Hải Ph&#242;ng định hướng đến năm 2040, tầm nh&#236;n đến năm 2050"
+                        href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                        title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
                       >
-                        Ph&#234; duyệt Chương tr&#236;nh ph&#225;t triển đ&#244;
-                        thị th&#224;nh phố Hải Ph&#242;ng định hướng đến năm
-                        2040, tầm nh&#236;n đến năm 2050
+                        621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ
                       </a>
                     </div>
                     <div class="event-item-content">
@@ -1108,7 +1116,12 @@
                           alt=""
                         />
                       </div>
-                      <div class="event-item-content-title">1 giờ trước</div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        18
+                      </div>
                     </div>
                     <div class="event-item-content">
                       <div class="event-item-icon">
@@ -1117,149 +1130,29 @@
                           alt=""
                         />
                       </div>
-                      <div class="event-item-content-title">8</div>
+                      <div class="event-item-content-title">2</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
+            <div class="col-12 col-lg-6 news-item-wrapper">
               <div class="news-item">
                 <div class="d-flex gap-3">
                   <div class="news-item-img">
                     <img
-                      src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="C&#249;ng h&#224;nh động nhằm bảo tồn, ph&#225;t huy tối đa gi&#225; trị đối với Di sản Vịnh Hạ Long - Quần đảo C&#225;t B&#224;"
+                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-112714.png"
+                      alt="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng"
                     />
                   </div>
                   <div class="news-item-desc">
                     <div class="news-item-title text-truncate-3">
                       <a
-                        href="/tin-tuc/cung-hanh-dong-nham-bao-ton-phat-huy-toi-da-gia-tri-doi-voi-di-san-vinh-ha-long---QCIOiST4JO-20026"
-                        title="C&#249;ng h&#224;nh động nhằm bảo tồn, ph&#225;t huy tối đa gi&#225; trị đối với Di sản Vịnh Hạ Long - Quần đảo C&#225;t B&#224;"
-                      >
-                        C&#249;ng h&#224;nh động nhằm bảo tồn, ph&#225;t huy tối
-                        đa gi&#225; trị đối với Di sản Vịnh Hạ Long - Quần đảo
-                        C&#225;t B&#224;
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">1 giờ trước</div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">0</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a - Thể thao c&#244;ng nh&#226;n, vi&#234;n chức, người lao động quận Ng&#244; Quyền 2024"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa---the-thao-cong-nhan-vien-chuc-nguoi-LiwmDOss9h-20027"
-                        title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a - Thể thao c&#244;ng nh&#226;n, vi&#234;n chức, người lao động quận Ng&#244; Quyền 2024"
-                      >
-                        S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y
-                        hội Văn h&#243;a - Thể thao c&#244;ng nh&#226;n,
-                        vi&#234;n chức, người lao động quận Ng&#244; Quyền 2024
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">1 giờ trước</div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">26</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch năm 2024"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-nam-2024-OVfImcU0lm-20022"
-                        title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch năm 2024"
-                      >
-                        Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
-                        kh&#225;ch du lịch năm 2024
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <i class="bi bi-clock"></i>
-                      </div>
-                      <div class="event-item-content-title">10 giờ trước</div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <i class="bi bi-eye"></i>
-                      </div>
-                      <div class="event-item-content-title">10</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng sẽ được đưa v&#224;o sử dụng dịp 30/4, 1/5"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-dong-se-duoc-dua-vao-su-Mk154EnC4W-20021"
-                        title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng sẽ được đưa v&#224;o sử dụng dịp 30/4, 1/5"
+                        href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-dong-H4KDeHAkLk-20021"
+                        title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng"
                       >
                         Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư
-                        hơn 130 tỷ đồng sẽ được đưa v&#224;o sử dụng dịp 30/4,
-                        1/5
+                        hơn 130 tỷ đồng
                       </a>
                     </div>
                     <div class="event-item-content">
@@ -1269,7 +1162,12 @@
                           alt=""
                         />
                       </div>
-                      <div class="event-item-content-title">1 giờ trước</div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        18
+                      </div>
                     </div>
                     <div class="event-item-content">
                       <div class="event-item-icon">
@@ -1278,29 +1176,167 @@
                           alt=""
                         />
                       </div>
-                      <div class="event-item-content-title">0</div>
+                      <div class="event-item-content-title">1</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12 col-lg-6 news-item-wrapper">
+            <div class="col-12 col-lg-6 news-item-wrapper">
+              <div class="news-item">
+                <div class="d-flex gap-3">
+                  <div class="news-item-img">
+                    <img
+                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-113130.png"
+                      alt="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                    />
+                  </div>
+                  <div class="news-item-desc">
+                    <div class="news-item-title text-truncate-3">
+                      <a
+                        href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
+                        title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                      >
+                        Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
+                        kh&#225;ch du lịch
+                      </a>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        18
+                      </div>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="event-item-content-title">7</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 news-item-wrapper">
+              <div class="news-item">
+                <div class="d-flex gap-3">
+                  <div class="news-item-img">
+                    <img
+                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-113543.png"
+                      alt="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                    />
+                  </div>
+                  <div class="news-item-desc">
+                    <div class="news-item-title text-truncate-3">
+                      <a
+                        href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
+                        title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                      >
+                        Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ
+                        th&#225;ng 3
+                      </a>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        18
+                      </div>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="event-item-content-title">5</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 news-item-wrapper">
+              <div class="news-item">
+                <div class="d-flex gap-3">
+                  <div class="news-item-img">
+                    <img
+                      src="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
+                      alt="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                    />
+                  </div>
+                  <div class="news-item-desc">
+                    <div class="news-item-title text-truncate-3">
+                      <a
+                        href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
+                        title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                      >
+                        S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y
+                        hội Văn h&#243;a
+                      </a>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        18
+                      </div>
+                    </div>
+                    <div class="event-item-content">
+                      <div class="event-item-icon">
+                        <img
+                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="event-item-content-title">39</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 news-item-wrapper">
               <div class="news-item">
                 <div class="d-flex gap-3">
                   <div class="news-item-img">
                     <img
                       src="/Uploads/2024/05/04/chuyenvien_10149/RegisterTinBai\AnhTinBai04052024-035243.png"
-                      alt="HẢI PH&#210;NG: TĂNG GI&#193; TRỊ TRẢI NGHIỆM CHO KH&#193;CH DU LỊCH"
+                      alt="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
                     />
                   </div>
                   <div class="news-item-desc">
                     <div class="news-item-title text-truncate-3">
                       <a
-                        href="/tin-tuc/hai-phong-tang-gia-tri-trai-nghiem-cho-khach-du-lich-NYL13O4Iev-20019"
-                        title="HẢI PH&#210;NG: TĂNG GI&#193; TRỊ TRẢI NGHIỆM CHO KH&#193;CH DU LỊCH"
+                        href="/tin-tuc/hai-phong-tang-gia-tri-trai-nghiem-cho-khach-du-lich-BvQrIP9cqF-20019"
+                        title="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
                       >
-                        HẢI PH&#210;NG: TĂNG GI&#193; TRỊ TRẢI NGHIỆM CHO
-                        KH&#193;CH DU LỊCH
+                        Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho
+                        kh&#225;ch du lịch
                       </a>
                     </div>
                     <div class="event-item-content">
@@ -1310,7 +1346,12 @@
                           alt=""
                         />
                       </div>
-                      <div class="event-item-content-title">1 giờ trước</div>
+                      <div
+                        class="event-item-content-title"
+                        data-keyconfig="ConLaiHome"
+                      >
+                        8
+                      </div>
                     </div>
                     <div class="event-item-content">
                       <div class="event-item-icon">
@@ -1329,7 +1370,7 @@
           <div class="w-100 adv">
             <div class="row g-3">
               <div class="col-12 col-lg-6 adv-item">
-                <a href="/page/thu-vien-anh" title="Thư viện ảnh">
+                <a href="/thu-vien-anh" title="Thư viện ảnh">
                   <img
                     src="Uploads/QLLinkDoiTuong/ThuVienAnh.png"
                     alt="Thư viện ảnh"
@@ -1388,30 +1429,33 @@
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Ngày: 04/05/2024 đến 23/05/2024
+                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
+                  25/05/2025
                 </div>
               </div>
               <div class="event-item-content">
-                <div class="event-item-icon">
+                <div class="event-item-icon" style="margin-right: 6px">
                   <img
                     src="/DuLichHaiPhong/assets/images/time-icon-event.png"
                     alt=""
                   />
                 </div>
-                <div class="event-item-content-title">Còn lại: 2 giờ</div>
+                <div class="event-item-content-title">
+                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 1
+                </div>
               </div>
             </a>
           </div>
           <div class="event-item d-flex align-items-center">
             <div class="event-item-order">2</div>
             <a
-              href="/su-kien/balloon-festival---fly-to-hai-phong-brighten-up-the-heritage-area-36CJ6wGXg1-17"
-              alt="Sự kiện Balloon Festival - Fly to Hai Phong! Brighten up the heritage area"
+              href="/su-kien/the-cheo-play-xuan-huong-female-artist-premiered-to-the-audience-33kOg9OIB3-19"
+              alt='Sự kiện The Cheo play "Xuan Huong Female Artist" premiered to the audience '
               class=""
             >
               <div class="event-item-title text-truncate-2">
-                Balloon Festival - Fly to Hai Phong! Brighten up the heritage
-                area
+                The Cheo play &quot;Xuan Huong Female Artist&quot; premiered to
+                the audience
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1430,30 +1474,33 @@
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Ngày: 04/05/2024 đến 23/05/2024
+                  <span data-keyconfig="DayHome">Ngày</span>: 23/05/2024 đến
+                  25/05/2025
                 </div>
               </div>
               <div class="event-item-content">
-                <div class="event-item-icon">
+                <div class="event-item-icon" style="margin-right: 6px">
                   <img
                     src="/DuLichHaiPhong/assets/images/time-icon-event.png"
                     alt=""
                   />
                 </div>
-                <div class="event-item-content-title">Còn lại: 2 giờ</div>
+                <div class="event-item-content-title">
+                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 1
+                </div>
               </div>
             </a>
           </div>
           <div class="event-item d-flex align-items-center">
             <div class="event-item-order">3</div>
             <a
-              href="/su-kien/the-2023-city-song---dance---music-festival-has-ended-with-many-brilliant-successes-XW4jgPeCR0-18"
-              alt="Sự kiện The 2023 City Song - Dance - Music Festival has ended with many brilliant successes"
+              href="/su-kien/ban-phao-hoa-no-tam-thap-vao-luc-21h-cac-ngay-thu-bay-chu-nhat-hang-tuan-3At7AiPXuC-5"
+              alt="Sự kiện Bắn ph&#225;o hoa nổ tầm thấp v&#224;o l&#250;c 21h c&#225;c ng&#224;y thứ Bảy, Chủ Nhật h&#224;ng tuần "
               class=""
             >
               <div class="event-item-title text-truncate-2">
-                The 2023 City Song - Dance - Music Festival has ended with many
-                brilliant successes
+                Bắn ph&#225;o hoa nổ tầm thấp v&#224;o l&#250;c 21h c&#225;c
+                ng&#224;y thứ Bảy, Chủ Nhật h&#224;ng tuần
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1462,7 +1509,7 @@
                     alt=""
                   />
                 </div>
-                <div class="event-item-content-title">Hai Phong</div>
+                <div class="event-item-content-title">Hải Ph&#242;ng</div>
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1472,18 +1519,19 @@
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Ngày: 04/05/2024 đến 21/05/2024
+                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
+                  21/07/2024
                 </div>
               </div>
               <div class="event-item-content">
-                <div class="event-item-icon">
+                <div class="event-item-icon" style="margin-right: 6px">
                   <img
                     src="/DuLichHaiPhong/assets/images/time-icon-event.png"
                     alt=""
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Còn lại: Sự kiện đ&#227; kết th&#250;c
+                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 28
                 </div>
               </div>
             </a>
@@ -1491,13 +1539,12 @@
           <div class="event-item d-flex align-items-center">
             <div class="event-item-order">4</div>
             <a
-              href="/su-kien/the-cheo-play-xuan-huong-female-artist-premiered-to-the-audience-on-the-evening-of-january-27-2024-fAeRdbXeSS-19"
-              alt='Sự kiện The Cheo play "Xuan Huong Female Artist" premiered to the audience on the evening of January 27, 2024.'
+              href="/su-kien/khai-mac-le-hoi-truyen-thong-nu-tuong-le-chan-nam-2024-3FAtKoZo2P-7"
+              alt="Sự kiện Khai mạc Lễ hội truyền thống Nữ tướng L&#234; Ch&#226;n năm 2024"
               class=""
             >
               <div class="event-item-title text-truncate-2">
-                The Cheo play &quot;Xuan Huong Female Artist&quot; premiered to
-                the audience on the evening of January 27, 2024.
+                Khai mạc Lễ hội truyền thống Nữ tướng L&#234; Ch&#226;n năm 2024
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1506,7 +1553,7 @@
                     alt=""
                   />
                 </div>
-                <div class="event-item-content-title">Hai Phong</div>
+                <div class="event-item-content-title">Hải Ph&#242;ng</div>
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1516,18 +1563,19 @@
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Ngày: 04/05/2024 đến 21/05/2024
+                  <span data-keyconfig="DayHome">Ngày</span>: 24/05/2024 đến
+                  24/05/2024
                 </div>
               </div>
               <div class="event-item-content">
-                <div class="event-item-icon">
+                <div class="event-item-icon" style="margin-right: 6px">
                   <img
                     src="/DuLichHaiPhong/assets/images/time-icon-event.png"
                     alt=""
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Còn lại: Sự kiện đ&#227; kết th&#250;c
+                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 5
                 </div>
               </div>
             </a>
@@ -1535,13 +1583,13 @@
           <div class="event-item d-flex align-items-center">
             <div class="event-item-order">5</div>
             <a
-              href="/su-kien/the-classic-play-macbeth-will-premiere-at-830-pm-on-march-30-2024-6bXm3KKrKM-20"
-              alt='Sự kiện The classic play "Macbeth" will premiere at 8:30 p.m. on March 30, 2024.'
+              href="/su-kien/vo-cheo-“xuan-huong-nu-si”-ra-mat-khan-gia-vao-toi-ngay-27012024-pejF7Pe3eY-11"
+              alt="Sự kiện Vở ch&#232;o “Xu&#226;n Hương nữ sĩ” ra mắt kh&#225;n giả v&#224;o tối ng&#224;y 27/01/2024"
               class=""
             >
               <div class="event-item-title text-truncate-2">
-                The classic play &quot;Macbeth&quot; will premiere at 8:30 p.m.
-                on March 30, 2024.
+                Vở ch&#232;o “Xu&#226;n Hương nữ sĩ” ra mắt kh&#225;n giả
+                v&#224;o tối ng&#224;y 27/01/2024
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1550,7 +1598,7 @@
                     alt=""
                   />
                 </div>
-                <div class="event-item-content-title">Hai Phong</div>
+                <div class="event-item-content-title">Hải Ph&#242;ng</div>
               </div>
               <div class="event-item-content">
                 <div class="event-item-icon">
@@ -1560,18 +1608,19 @@
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Ngày: 04/05/2024 đến 21/05/2024
+                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
+                  23/05/2024
                 </div>
               </div>
               <div class="event-item-content">
-                <div class="event-item-icon">
+                <div class="event-item-icon" style="margin-right: 6px">
                   <img
                     src="/DuLichHaiPhong/assets/images/time-icon-event.png"
                     alt=""
                   />
                 </div>
                 <div class="event-item-content-title">
-                  Còn lại: Sự kiện đ&#227; kết th&#250;c
+                  <span data-keyconfig="ConLaiHome">Còn lại</span>:
                 </div>
               </div>
             </a>
@@ -1592,7 +1641,10 @@
         </div>
 
         <div class="row g-3">
-          <a class="col-12 col-lg-6 checkin-item position-relative">
+          <a
+            class="col-12 col-lg-6 checkin-item position-relative"
+            href="https://www.instagram.com/haiphongtourism/"
+          >
             <img
               src="Uploads/QLLinkDoiTuong/anh1.png"
               alt="Ảnh 1"
@@ -1608,7 +1660,10 @@
           </a>
           <div class="col-12 col-lg-6">
             <div class="row g-3 align-items-stretch">
-              <a class="col-12 checkin-item-2 position-relative">
+              <a
+                class="col-12 checkin-item-2 position-relative"
+                href="https://www.instagram.com/haiphongtourism/"
+              >
                 <img
                   src="Uploads/QLLinkDoiTuong/anh2.png"
                   alt="Ảnh 2"
@@ -1622,7 +1677,10 @@
                   />
                 </div>
               </a>
-              <a class="col-6 col-lg-6 checkin-item-3 position-relative">
+              <a
+                class="col-6 col-lg-6 checkin-item-3 position-relative"
+                href="https://www.instagram.com/haiphongtourism/"
+              >
                 <img
                   src="Uploads/QLLinkDoiTuong/anh3.png"
                   alt="Ảnh 3"
@@ -1636,7 +1694,10 @@
                   />
                 </div>
               </a>
-              <a class="col-6 col-lg-6 checkin-item-3 position-relative">
+              <a
+                class="col-6 col-lg-6 checkin-item-3 position-relative"
+                href="https://www.instagram.com/haiphongtourism/"
+              >
                 <img
                   src="Uploads/QLLinkDoiTuong/anh4.png"
                   alt="Ảnh 4"
@@ -1808,7 +1869,7 @@
                 <input
                   name="__RequestVerificationToken"
                   type="hidden"
-                  value="_p8mJLOyO5fJTyFUOEMXStmzCtnUHTcneZVHjUwVJiwYuyYcqh1BA5PvlTeDtdR4Hv2ibOlfavtXkTaShxqOPD9N07HHo8OgJH68o0e4tho1"
+                  value="BlRuyMdl83ogX7nIBcmOf2mdZFgHNFyBxBRf4W6F_d2Eh7h7ctqs7r-JC5TNtSZjkQeQsFe2DT7J_DznzxGI2M7BPzRjpzFzg-UCEzT7gXjPjnM0LDV9ZeDcdmbOB6-ZLU_-Qqid2wwMCl4mDPzb0A2"
                 />
                 <div class="mb-3 mt-3">
                   <input
@@ -1899,7 +1960,7 @@
                         <img
                           class="BDC_CaptchaImage"
                           id="RegistrationCaptcha_CaptchaImage"
-                          src="/BotDetectCaptcha.ashx?get=image&amp;c=RegistrationCaptcha&amp;t=aa0e864bf3b5493391eac470e4de98df"
+                          src="/BotDetectCaptcha.ashx?get=image&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
                           alt="Retype the CAPTCHA code from the image"
                           style=""
                         />
@@ -1950,7 +2011,7 @@
    --><a
                         class="BDC_SoundLink"
                         id="RegistrationCaptcha_SoundLink"
-                        href="/BotDetectCaptcha.ashx?get=sound&amp;c=RegistrationCaptcha&amp;t=aa0e864bf3b5493391eac470e4de98df"
+                        href="/BotDetectCaptcha.ashx?get=sound&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
                         title="Speak the CAPTCHA code"
                         rel="nofollow"
                         ><img
@@ -1970,14 +2031,14 @@
  -->
                     </div>
                     <script
-                      src="/BotDetectCaptcha.ashx?get=script-include&amp;c=RegistrationCaptcha&amp;t=aa0e864bf3b5493391eac470e4de98df"
+                      src="/BotDetectCaptcha.ashx?get=script-include&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
                       type="text/javascript"
                     ></script>
                     <input
                       type="hidden"
                       name="BDC_VCID_RegistrationCaptcha"
                       id="BDC_VCID_RegistrationCaptcha"
-                      value="aa0e864bf3b5493391eac470e4de98df"
+                      value="255b95b5fcad4cdb8e394b49cd775cfc"
                     />
                     <input
                       type="hidden"
@@ -1989,13 +2050,13 @@
                       type="hidden"
                       name="BDC_Hs_RegistrationCaptcha"
                       id="BDC_Hs_RegistrationCaptcha"
-                      value="38fd0d98bbf8f7808e6196316d0b53e80e091b2f"
+                      value="5dccfea50c3f71dc9e9259d75b43c5d1ec0cb65c"
                     />
                     <input
                       type="hidden"
                       name="BDC_SP_RegistrationCaptcha"
                       id="BDC_SP_RegistrationCaptcha"
-                      value="888548175"
+                      value="1435456356"
                     />
                   </div>
                 </div>
@@ -2319,11 +2380,16 @@
       </div>
     </div>
     <!-- Chatbox -->
+    <!-- Scroll To Top -->
+    <button id="myBtnScroll" class="myBtnScroll" title="Lên đầu trang">
+      <i class="bi bi-chevron-double-up"></i>
+    </button>
+    <!-- Scroll To Top -->
     <!-- Footer -->
     <div class="container-fluid footer text-white">
       <div class="container">
-        <div class="row gx-lg-5 gx-5 justify-content-between gy-5 gy-lg-5">
-          <div class="col-lg-4 fw-bold col-11">
+        <div class="row gx-0 justify-content-between gy-5 gy-lg-5">
+          <div class="col-lg-5 fw-bold col-11">
             <div
               style="font-size: 16px"
               class="text-uppercase footer-title"
@@ -2338,17 +2404,19 @@
             <div class="footer-line" data-keyconfig="footerdiachi">
               Địa chỉ: 72 Trần Phú, Ngô Quyền, Hải Phòng
             </div>
-            <div class="footer-line d-flex justify-content-between">
+            <div class="footer-line">
               <span data-keyconfig="footerdienthoai"
                 >Điện thoại: 0225.229.9799</span
               >
-              <span data-keyconfig="footerhotline">Hotline: 0945.132.599</span>
+              <span class="ms-5" data-keyconfig="footerhotline"
+                >Hotline: 0945.132.599</span
+              >
             </div>
             <div class="footer-line" data-keyconfig="footeremail">
               Email: sodulich@haiphong.gov.vn
             </div>
           </div>
-          <div class="col-lg-3 fw-bold col-11">
+          <div class="col-lg-2 fw-bold col-11 px-5">
             <div
               style="font-size: 16px"
               class="text-uppercase footer-title"
@@ -2364,18 +2432,18 @@
             </div>
             <div class="w-100 d-flex justify-content-between footer-line">
               <span data-keyconfig="footerHomNay">Hôm nay:</span>
-              <span>413</span>
+              <span>215</span>
             </div>
             <div class="w-100 d-flex justify-content-between footer-line">
               <span data-keyconfig="footerTuanNay">Tuần này:</span>
-              <span>718</span>
+              <span>946</span>
             </div>
             <div class="w-100 d-flex justify-content-between footer-line">
               <span data-keyconfig="footerTongluot">Tổng lượt truy cập:</span>
-              <span>2619</span>
+              <span>2847</span>
             </div>
           </div>
-          <div class="col-lg-4 fw-bold col-11">
+          <div class="col-lg-5 fw-bold col-11 ps-4">
             <div
               style="font-size: 16px"
               class="footer-title"
@@ -2486,7 +2554,7 @@
                 <input
                   name="__RequestVerificationToken"
                   type="hidden"
-                  value="NHw1pcbHhk5FU9gQRW9BCoas5f3Zb7XYUKReDRp_UCjC2rozOhzkSVZGmClkovMKbxP8aghDJKzAv7nVWcfenODE3nS_8_6FMJYxzelURDc1"
+                  value="peSGdcfco0KG9DM47K_eJ7YvYsVqP1EgL8DzQqHfjNBpQ2LKutQzJGYdryz4XOKLShMVHI4LxkKK0VSl5tgfL7aXF5Uam7j5yWDyETxpF9ypWGEXXvwgdThGVw5Qbkuufum1wYJOl1zUVWOxbRYsJw2"
                 />
                 <input type="hidden" value="/" name="returnUrl" />
                 <div class="col-sm-12 form-horizontal">
@@ -2686,7 +2754,8 @@
         function AjaxFormLoginSuccess(rs) {
           debugger;
           if (rs.Status) {
-            window.location.href = rs.Param;
+            //window.location.href = rs.Param;
+            window.location.href = window.location.href;
           } else {
             $('#error-message').text(rs.Message);
           }
@@ -2812,7 +2881,7 @@
           },
           // when window width is >= 640px
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           // when window width is >= 768px
@@ -2941,9 +3010,8 @@
                         $(el).html(config.Content);
                       }
                     }
-
                     if (isAllowEdit) {
-                      if (config.TypeConfig == 'placeholder') {
+                      if ($(el).prop('tagName') === 'INPUT') {
                         $(el).parent().css('position', 'relative');
                         $(el)
                           .parent()
@@ -2978,7 +3046,7 @@
         );
 
         changeLang().then(() => {
-          window.location.reload();
+          window.location.href = window.location.href;
         });
       }
     </script>
