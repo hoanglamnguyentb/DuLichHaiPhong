@@ -3337,14 +3337,15 @@ input[type='checkbox']:checked ~ label .line-3 {
   width: 27.5%;
 }
 
-lam-ratio-4x3 {
+.lam-ratio-4x3 {
   background-color: red;
   width: 100%;
   padding-top: 75%;
   position: relative;
+  display: block;
 }
 
-lam-ratio-4x3 img {
+.lam-ratio-4x3 img {
   position: absolute;
   top: 0;
   left: 0;
