@@ -3338,11 +3338,11 @@ input[type='checkbox']:checked ~ label .line-3 {
 }
 
 .lam-ratio-4x3 {
-  background-color: red;
   width: 100%;
   padding-top: 75%;
   position: relative;
   display: block;
+  aspect-ratio: 4 / 3;
 }
 
 .lam-ratio-4x3 img {
