@@ -3336,3 +3336,18 @@ input[type='checkbox']:checked ~ label .line-3 {
 .footer .col-lg-2 {
   width: 27.5%;
 }
+
+lam-ratio-4x3 {
+  background-color: red;
+  width: 100%;
+  padding-top: 75%;
+  position: relative;
+}
+
+lam-ratio-4x3 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
