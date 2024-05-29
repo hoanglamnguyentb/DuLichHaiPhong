@@ -1,0 +1,2213 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
+    <title>Du lịch Hải Phòng | Tin tức</title>
+    <link href="/assets/css/bootstrap5.min.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <link href="/assets/css/jquery.gritter.min.css" rel="stylesheet" />
+
+    <link href="/Content/ThongBao.css" rel="stylesheet" />
+    <link href="/assets/bootstrap5.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/utilities.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link href="/assets/css/chatbox.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/bootstrap5.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link
+      href="/assets/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets/plugins/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/jquery-confirm.css" rel="stylesheet" />
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="/Scripts/AdditionValidation.js"></script>
+
+    <style>
+      .mySwiperHero.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mySwiperHero .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mySwiperHero .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mySwiperDiscovery.swiper {
+        width: 100%;
+        padding-bottom: 50px;
+        height: 500px;
+      }
+
+      .mySwiperDiscovery .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .mySwiperDiscovery .swiper-slide img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mySwiperPotential.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mySwiperPotential .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mySwiperPotential .swiper-slide img {
+        display: block;
+        /*            width: 100%;
+                height: 100%;
+                object-fit: cover;*/
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+      .config_button {
+        position: absolute;
+        color: red;
+        top: 0;
+      }
+
+      .config_input {
+        right: 0;
+      }
+
+      .config_button:hover {
+        cursor: pointer;
+        color: #c57a7a;
+      }
+
+      #createConfigTrangChuForm .modal-header {
+        display: flex;
+        background: #1cb5c2;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #dee2e6;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+        flex-direction: row-reverse;
+      }
+
+      #createConfigTrangChuForm .modal-header > button {
+        border-color: transparent;
+        background: white;
+        color: black;
+        font-size: xx-large;
+        border-radius: 1.5em;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-weight: 500;
+        padding-bottom: 0.5%;
+      }
+    </style>
+
+    <script src="/Scripts/Common.js"></script>
+    <script src="/assets/js/jquery.gritter.min.js"></script>
+
+    <script>
+      function addScriptLibrary(src) {
+        var scripts = document.querySelectorAll('script[src="' + src + '"]');
+        if (scripts.length <= 0) {
+          var script = document.createElement('script');
+          script.src = src;
+          script.type = 'text/javascript';
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      }
+
+      var DuBaoThoiTiet = [];
+
+      $.ajax({
+        url: 'https://api.openweathermap.org/data/2.5/forecast?q=Haiphong&appid=bd5e378503939ddaee76f12ad7a97608&units=metric',
+        type: 'GET',
+        data: null,
+        success: (rs) => {
+          DuBaoThoiTiet = rs.list;
+          var currentTime = new Date();
+          function parseDate(timeString) {
+            return new Date(timeString.replace(' ', 'T'));
+          }
+          var closestObj = rs.list[0];
+          var closestTime = parseDate(closestObj.dt_txt);
+          rs.list.forEach(function (obj) {
+            var objTime = parseDate(obj.dt_txt);
+            if (
+              Math.abs(objTime - currentTime) <
+              Math.abs(closestTime - currentTime)
+            ) {
+              closestObj = obj;
+              closestTime = objTime;
+            }
+          });
+          $('#NhietDoHomNay').html(
+            `<img src="https://openweathermap.org/img/wn/${closestObj.weather[0].icon}@2x.png"/><span>${closestObj.main.temp}</span>&deg;C`
+          );
+        },
+        error: null,
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+
+    <!-- Header -->
+    <div class="container-fluid header-top d-flex">
+      <div class="container header-top-left">
+        <div class="header-social-bg w-100">
+          <div
+            class="header-social d-flex justify-content-between align-items-center"
+          >
+            <div class="header-social-title">
+              <span data-keyconfig="topbarName"
+                >Cổng thông tin du lịch Thành phố Hải Phòng</span
+              >
+              <span id="NhietDoHomNay"></span>
+            </div>
+
+            <div class="header-social-link">
+              <ul class="d-flex">
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCdcZwa9UUpXp6-F9m0u-e0Q"
+                  >
+                    <img
+                      src="/Uploads/QLLinkDoiTuong/youtube-icon18052024-034810.png"
+                      alt="Youtube"
+                      onerror="this.src='/assets/images/notfoundimage.png'"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@haiphongtourismofficial?lang=en"
+                  >
+                    <img
+                      src="/Uploads/QLLinkDoiTuong/tiktok-icon.png"
+                      alt="TikTok"
+                      onerror="this.src='/assets/images/notfoundimage.png'"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/SoDulichHaiPhong">
+                    <img
+                      src="/Uploads/QLLinkDoiTuong/facebook-icon.png"
+                      alt="Facebook"
+                      onerror="this.src='/assets/images/notfoundimage.png'"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/haiphongtourism/">
+                    <img
+                      src="/Uploads/QLLinkDoiTuong/instargram-icon18052024-034934.png"
+                      alt="Instargram"
+                      onerror="this.src='/assets/images/notfoundimage.png'"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="header-top-right flex-shrink-0 d-flex align-items-center justify-content-end text-white"
+        >
+          <div class="dropdown dropdown-menu-user text-center">
+            <div
+              type="button"
+              class="text-center d-flex align-items-center flex-column"
+              data-bs-toggle="dropdown"
+            >
+              <div class="navbar-top-user">
+                <img
+                  src="/assets/images/user-icon.png"
+                  onclick="OpenLogin()"
+                  alt="Alternate Text"
+                />
+              </div>
+
+              <div class="">
+                <a
+                  href="javascript:void(0)"
+                  onclick="OpenLogin()"
+                  title="Đăng nhập"
+                  data-keyconfig="topbardangnhap"
+                  >Đăng nhập</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="dropdown dropdown-menu-language">
+            <div
+              type="button"
+              class="dropdown-toggle-menu-language d-flex align-items-center flex-column"
+              data-bs-toggle="dropdown"
+            >
+              <div class="d-flex align-items-center w-100 justify-content-end">
+                <div class="navbar-top-user">
+                  <img
+                    id="flagLangSelect"
+                    src="/assets/images/lang-vn.png"
+                    alt=""
+                  />
+                </div>
+                <img
+                  class="toggle-icon ms-2"
+                  src="/assets/images/toggle-icon.png"
+                  alt=""
+                />
+              </div>
+              <div data-keyconfig="topbarngonngu">Ngôn ngữ</div>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a
+                  class="dropdown-item"
+                  onclick="SetLang('TiengViet',this,'https://dulichhp.ebizoffice.vn/','/assets/images/lang-vn.png')"
+                  ><img src="/assets/images/lang-vn.png" alt="" /> Việt Nam</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  onclick="SetLang('English',this,'https://dulichhp.ebizoffice.vn/','/assets/images/lang-en.png')"
+                  ><img src="/assets/images/lang-en.png" alt="" /> English</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  onclick="SetLang('TiengTrung',this,'https://dulichhp-ebizoffice-vn.translate.goog/?_x_tr_sch=http&_x_tr_sl=vi&_x_tr_tl=zh-CN&_x_tr_hl=vi&_x_tr_pto=wapp','/assets/images/china.png')"
+                  ><img src="/assets/images/china.png" alt="" /> 中国</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid header-bottom position-relative">
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <div class="container-fluid flex-mobile">
+            <a class="navbar-brand" href="/">
+              <img src="/assets/images/logo.png" alt="" />
+            </a>
+            <span class="nav-item-mobile-show navbar-brand-slogan"
+              >Cổng thông tin du lịch Thành phố Hải Phòng</span
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li
+                  class="nav-item navbar-toggler-menu-icon nav-item-mobile-hide"
+                >
+                  <input type="checkbox" id="checkbox_toggle" />
+                  <label class="nav-link icon_menu" for="checkbox_toggle">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                  </label>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/page/gioi-thieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/tour-du-lich"
+                    >Kh&#225;m ph&#225;</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/lap-ke-hoach">Lập kế hoạch</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/tien-ich-du-lich"
+                    >Tiện &#237;ch du lịch</a
+                  >
+                </li>
+              </ul>
+
+              <form
+                class="d-flex position-relative align-items-center search-form m-0"
+                id="frmSearchHome"
+              >
+                <input
+                  class="form-control"
+                  data-keyconfig="placeholder_search_home"
+                  id="inputSearchHome"
+                  type="search"
+                  placeholder="Từ khoá tìm kiếm"
+                  aria-label="Search"
+                  style="padding: 10px 10px 10px 35px !important"
+                />
+
+                <div
+                  class="search-icon position-absolute top-50 start-0 translate-middle"
+                  style="left: 20px !important"
+                >
+                  <i class="bi bi-search fs-4"></i>
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div id="container_slide_menu">
+          <section id="slide_menu">
+            <div class="content_menu_t scollbar_custom">
+              <div class="wrap_items">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a class="header_link d-flex" href="/page/gioi-thieu"
+                            >Giới thiệu</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a href="/page/gioi-thieu" title="Giới thiệu"
+                              >Giới thiệu</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/tin-tuc" title="Tin tức">Tin tức</a>
+                          </li>
+                          <li>
+                            <a href="/su-kien" title="Sự kiện">Sự kiện</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a
+                            class="header_link d-flex"
+                            href="javascript:void(0)"
+                            >Du lịch</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a href="/diem-den" title="Di chuyển">Di chuyển</a>
+                          </li>
+                          <li>
+                            <a href="/co-so-luu-tru" title="Lưu tr&#250;"
+                              >Lưu tr&#250;</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/tour-du-lich" title="Kh&#225;m ph&#225;"
+                              >Kh&#225;m ph&#225;</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/dia-diem-an-uong" title="Ẩm thực"
+                              >Ẩm thực</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/noi-bat" title="Nổi bật">Nổi bật</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a class="header_link d-flex" href="/tien-ich-du-lich"
+                            >Tiện &#237;ch du lịch</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li><a href="/vr360" title="VR360">VR360</a></li>
+                          <li>
+                            <a href="/ban-do-du-lich" title="Bản đồ du lịch"
+                              >Bản đồ du lịch</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0)"
+                              title="Cẩm nang du lịch"
+                              >Cẩm nang du lịch</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/goi-y-thong-minh"
+                              title="Gợi &#253; th&#244;ng minh"
+                              >Gợi &#253; th&#244;ng minh</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/tao-lich-trinh"
+                              title="Tạo lịch tr&#236;nh"
+                              >Tạo lịch tr&#236;nh</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a
+                            class="header_link d-flex"
+                            href="javascript:void(0)"
+                            >Danh mục</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a
+                              href="/trung-tam-mua-sam-giai-tri"
+                              title="Trung t&#226;m mua sắm, giải tr&#237;"
+                              >Trung t&#226;m mua sắm, giải tr&#237;</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/doanh-nghiep-lu-hanh"
+                              title="Doanh nghiệp Lữ h&#224;nh"
+                              >Doanh nghiệp Lữ h&#224;nh</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/cay-xang" title="C&#226;y xăng"
+                              >C&#226;y xăng</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/co-so-kham-chua-benh"
+                              title="Cơ sở kh&#225;m chữa bệnh, hiệu thuốc"
+                              >Cơ sở kh&#225;m chữa bệnh, hiệu thuốc</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/phuong-tien-cong-cong"
+                              title="Phương tiện c&#244;ng cộng"
+                              >Phương tiện c&#244;ng cộng</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wrap_items">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a
+                            class="header_link d-flex"
+                            href="javascript:void(0)"
+                            >Media</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a href="/thu-vien-anh" title="Thư viện ảnh"
+                              >Thư viện ảnh</a
+                            >
+                          </li>
+                          <li><a href="/video" title="Video">Video</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a
+                            class="header_link d-flex"
+                            href="javascript:void(0)"
+                            >Li&#234;n hệ</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a href="javascript:void(0)" title="Li&#234;n hệ"
+                              >Li&#234;n hệ</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ho-tro-khan-cap" title="Hỗ trợ khẩn cấp"
+                              >Hỗ trợ khẩn cấp</a
+                            >
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)" title="Hỏi đ&#225;p"
+                              >Hỏi đ&#225;p</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box_items">
+                        <header>
+                          <a
+                            class="header_link d-flex"
+                            href="javascript:void(0)"
+                            >Mạng x&#227; hội</a
+                          >
+                        </header>
+
+                        <ul class="sub_menu scollbar_custom">
+                          <li>
+                            <a
+                              href="https://www.facebook.com/SoDulichHaiPhong"
+                              title="Facebook"
+                              >Facebook</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.tiktok.com/@haiphongtourismofficial?lang=en"
+                              title="Tiktok"
+                              >Tiktok</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.youtube.com/channel/UCdcZwa9UUpXp6-F9m0u-e0Q"
+                              title="Youtube"
+                              >Youtube</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.instagram.com/haiphongtourism/"
+                              title="Instagram"
+                              >Instagram</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+    <script>
+      document
+        .getElementById('inputSearchHome')
+        .addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            // 13 is the Enter key code
+            event.preventDefault(); // Prevents the default form submission
+            //document.getElementById("frmSearchHome").submit(); // Manually submits the form
+
+            var valserarch = $('#inputSearchHome').val();
+            window.location.href = `/Home/ListSearchAll?valSearch=${valserarch}`;
+          }
+        });
+
+      function OpenLogin() {
+        $('#modalLogin').modal('show');
+      }
+
+      //MenuEndUser
+      document
+        .getElementById('checkbox_toggle')
+        .addEventListener('change', function () {
+          var slideMenu = document.getElementById('slide_menu');
+          if (this.checked) {
+            slideMenu.classList.add('show-menu');
+          } else {
+            slideMenu.classList.remove('show-menu');
+          }
+        });
+    </script>
+
+    <!-- Header -->
+
+    <div class="container-fluid position-relative">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/"><i class="bi bi-house-door-fill text-black"></i></a>
+            </li>
+            <li class="breadcrumb-item" aria-current="page">
+              <i class="bi bi-chevron-right"></i> Tin tức
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <link href="/Content/EndUser/css/article.css" rel="stylesheet" />
+
+    <div class="container-fluid position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mb-3">
+            <div class="article-page">
+              <div class="row g-0 mb-3 row shadow-hover hoverZoom">
+                <div class="col-12 col-md-5 hoverImg">
+                  <a
+                    href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
+                    title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                    class="ratio ratio-4x3"
+                  >
+                    <img
+                      src="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                      title="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
+                      onerror="this.src='/assets/images/notfoundimage.png'"
+                    />
+                  </a>
+                </div>
+                <div class="col-12 col-md-7 p-3">
+                  <a
+                    href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
+                    title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                  >
+                    <div class="article-top1-title">
+                      S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y
+                      hội Văn h&#243;a
+                    </div>
+                    <div class="article-top1-date">
+                      <i class="bi bi-clock"></i> 23/05/2024
+                    </div>
+                    <div class="article-top1-des spec-1">
+                      Hưởng ứng Th&#225;ng C&#244;ng nh&#226;n 2024 v&#224; Lễ
+                      hội Hoa Phượng đỏ - Hải Ph&#242;ng 2024; thiết thực
+                      ch&#224;o mừng Đại hội MTTQ Việt Nam quận Ng&#244; Quyền,
+                      nhiệm kỳ 2024 – 2029. S&#225;ng 11/5, tại Trung t&#226;m
+                      Ch&#237;nh trị - H&#224;nh ch&#237;nh quận Ng&#244; Quyền,
+                      Li&#234;n đo&#224;n Lao động quận tổ chức Ng&#224;y hội
+                      Văn h&#243;a - Thể thao trong c&#225;n bộ, c&#244;ng
+                      nh&#226;n, vi&#234;n chức, lao động năm 2024.
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="" style="clear: both">
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
+                      title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-113543.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
+                        class="fs-5"
+                        title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                      >
+                        Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ
+                        th&#225;ng 3
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Dự kiến từ th&#225;ng 3/2024, bến ph&#224; G&#243;t (huyện
+                      C&#225;t Hải) sẽ dừng hoạt động. Việc vận chuyển h&#224;nh
+                      kh&#225;ch từ đất liền ra đảo C&#225;t B&#224; sẽ chuyển
+                      sang bến Đồng B&#224;i c&#225;ch đ&#243; khoảng 4km. Bến
+                      ph&#224; mới hiện đại, khang trang, rộng r&#227;i hơn đi
+                      v&#224;o hoạt động ngay trước m&#249;a du lịch cao điểm
+                      năm 2024 g&#243;p phần n&#226;ng cao năng lực vận chuyển,
+                      tạo sự thoải m&#225;i v&#224; tiện lợi hơn cho du
+                      kh&#225;ch
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
+                      title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/28/admin_1/RegisterTinBai\huyen-cat-hai-tung-buoc-tro-thanh-mot-cuc-phat-trien-rieng-cua-hai-phong-20230706152333.jpg"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
+                        class="fs-5"
+                        title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                      >
+                        Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
+                        kh&#225;ch du lịch
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      S&#225;ng 6/3, UBND huyện C&#225;t Hải tổ chức Hội nghị
+                      Tổng kết c&#244;ng t&#225;c du lịch năm 2023, triển khai
+                      nhiệm vụ, giải ph&#225;p du lịch năm 2024. Dự hội nghị
+                      c&#243; đại diện l&#227;nh đạo c&#225;c sở, ban,
+                      ng&#224;nh th&#224;nh phố, đại diện c&#225;c doanh nghiệp
+                      du lịch tr&#234;n địa b&#224;n huyện C&#225;t Hải
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-Sa2MmGzL4u-20021"
+                      title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ "
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-112714.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-Sa2MmGzL4u-20021"
+                        class="fs-5"
+                        title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ "
+                      >
+                        Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư
+                        hơn 130 tỷ
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Bến ph&#224; Đồng B&#224;i (huyện C&#225;t Hải) đ&#227;
+                      ch&#237;nh thức đi v&#224;o hoạt động từ ng&#224;y
+                      01/3/2024, thay thế bến ph&#224; G&#243;t c&#225;ch
+                      đ&#243; 4km, tiếp tục sứ mệnh đ&#243;n đưa nh&#226;n
+                      d&#226;n, du kh&#225;ch v&#224; phương tiện từ đất liền
+                      qua Lạch Huyện ra đảo C&#225;t B&#224; (huyện C&#225;t
+                      Hải) v&#224; ngược lại. Tuy nhi&#234;n, ngay khi đi
+                      v&#224;o hoạt động, bến ph&#224; mới đ&#227; bộc lộ một số
+                      bất cập do chưa ho&#224;n thiện cơ sở hạ tầng, đặc biệt
+                      l&#224; những chiếc ph&#224; cũ đ&#227; kh&#244;ng
+                      c&#242;n ph&#249; hợp với bến ph&#224; mới, hiện đại…
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                      title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                        class="fs-5"
+                        title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
+                      >
+                        621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 23/05/2024
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Trong dịp lễ 30.4-1.5, lượng kh&#225;ch đến Hải Ph&#242;ng
+                      tăng cao, c&#244;ng suất ph&#242;ng tại c&#225;c khu du
+                      lịch C&#225;t B&#224;, Đồ Sơn đạt 100%
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/hai-phong-tang-gia-tri-trai-nghiem-cho-khach-du-lich-BvQrIP9cqF-20019"
+                      title="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/04/chuyenvien_10149/RegisterTinBai\AnhTinBai04052024-035243.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/hai-phong-tang-gia-tri-trai-nghiem-cho-khach-du-lich-BvQrIP9cqF-20019"
+                        class="fs-5"
+                        title="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
+                      >
+                        Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho
+                        kh&#225;ch du lịch
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Th&#224;nh phố Hải Ph&#242;ng đang tập trung x&#226;y dựng
+                      sản phẩm chủ lực để khai th&#225;c nhằm gia tăng gi&#225;
+                      trị trải nghiệm, k&#233;o d&#224;i thời gian lưu tr&#250;
+                      v&#224; tăng mức chi ti&#234;u trung b&#236;nh của mỗi du
+                      kh&#225;ch.
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/du-lich-ba-ria---vung-tau-thang-lon-U6P2clhBxx-20014"
+                      title="Du lịch B&#224; Rịa - Vũng T&#224;u thắng lớn"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/04/chuyenvien_10149/RegisterTinBai\AnhTinBai.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/du-lich-ba-ria---vung-tau-thang-lon-U6P2clhBxx-20014"
+                        class="fs-5"
+                        title="Du lịch B&#224; Rịa - Vũng T&#224;u thắng lớn"
+                      >
+                        Du lịch B&#224; Rịa - Vũng T&#224;u thắng lớn
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 14/03/2024
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Sở Du lịch B&#224; Rịa - Vũng T&#224;u cho biết doanh thu
+                      du lịch của tỉnh n&#224;y trong 5 ng&#224;y nghỉ lễ 30-4,
+                      1-5 ước đạt gần 670 tỉ đồng.
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/tour-con-dao-2n2d-con-dao-huyen-thoai-tau-cao-toc-BNtTU6ghQN-20011"
+                      title="Tour C&#244;n Đảo 2N2Đ: C&#244;n Đảo Huyền Thoại (T&#224;u Cao Tốc)"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/02/admin_1/RegisterTinBai\Ha.jpg"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/tour-con-dao-2n2d-con-dao-huyen-thoai-tau-cao-toc-BNtTU6ghQN-20011"
+                        class="fs-5"
+                        title="Tour C&#244;n Đảo 2N2Đ: C&#244;n Đảo Huyền Thoại (T&#224;u Cao Tốc)"
+                      >
+                        Tour C&#244;n Đảo 2N2Đ: C&#244;n Đảo Huyền Thoại
+                        (T&#224;u Cao Tốc)
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Tour C&#244;n Đảo 2N2Đ cung cấp trải nghiệm phong ph&#250;
+                      từ việc thăm c&#225;c địa điểm văn h&#243;a v&#224;
+                      t&#226;m linh như V&#226;n Sơn Tự v&#224; Ch&#249;a
+                      N&#250;i Một đến kh&#225;m ph&#225; di sản lịch sử tại Bảo
+                      t&#224;ng C&#244;n Đảo v&#224; Trại Ph&#250; Hải. Đặc
+                      biệt, chuyến thăm Ch&#249;a Som Rong với kiến tr&#250;c
+                      Khmer độc đ&#225;o v&#224; vị tr&#237; nh&#236;n ra cảnh
+                      quan thi&#234;n nhi&#234;n h&#249;ng vĩ sẽ l&#224; điểm
+                      nhấn đ&#225;ng nhớ​​. C&#249;ng iVIVU kh&#225;m ph&#225;
+                      ngay h&#244;m nay!
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/tour-ha-long-3n2d-hn---ha-long---vinh-lan-ha---hang-sang-toi---du-thuyen-crown-legend-cruise-5-pdBfOmvOR6-20010"
+                      title="Tour Hạ Long 3N2Đ: HN - Hạ Long - Vịnh Lan Hạ - Hang S&#225;ng Tối - Du Thuyền Crown Legend Cruise 5*"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/04/22/admin_1/RegisterTinBai\AnhTinBai22042024-022642.png"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/tour-ha-long-3n2d-hn---ha-long---vinh-lan-ha---hang-sang-toi---du-thuyen-crown-legend-cruise-5-pdBfOmvOR6-20010"
+                        class="fs-5"
+                        title="Tour Hạ Long 3N2Đ: HN - Hạ Long - Vịnh Lan Hạ - Hang S&#225;ng Tối - Du Thuyền Crown Legend Cruise 5*"
+                      >
+                        Tour Hạ Long 3N2Đ: HN - Hạ Long - Vịnh Lan Hạ - Hang
+                        S&#225;ng Tối - Du Thuyền Crown Legend Cruise 5*
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 07/01/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Du thuyền Crown Legend Cruise l&#224; lựa chọn h&#224;ng
+                      đầu để trải nghiệm Vịnh Hạ Long. Với dịch vụ 5 sao, bạn sẽ
+                      được tận hưởng kh&#244;ng gian sang trọng v&#224; tiện
+                      nghi, c&#249;ng kh&#225;m ph&#225; vẻ đẹp tuyệt vời của
+                      Vịnh Hạ Long.C&#249;ng iVIVU kh&#225;m ph&#225; ngay
+                      h&#244;m nay!
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row g-0 mb-3 rounded rounded-3 shadow-hover bg-color-gray hoverZoom"
+                >
+                  <div class="col-md-3 p-0 hoverImg">
+                    <a
+                      class="ratio ratio-4x3"
+                      href="/tin-tuc/du-lich-quang-binh-thanh-xuan-nhat-dinh-phai-di-mot-lan-uTUSaJNfph-10008"
+                      title=" Du lịch Quảng B&#236;nh thanh xu&#226;n nhất định phải đi một lần"
+                    >
+                      <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        class="img-fluid img-responsive rounded product-image"
+                        src="/Uploads/2024/05/23/admin_1/RegisterTinBai\hang-en-5_1630644756.jpg"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-9 p-3">
+                    <h5 class="fw-bold">
+                      <a
+                        href="/tin-tuc/du-lich-quang-binh-thanh-xuan-nhat-dinh-phai-di-mot-lan-uTUSaJNfph-10008"
+                        class="fs-5"
+                        title=" Du lịch Quảng B&#236;nh thanh xu&#226;n nhất định phải đi một lần"
+                      >
+                        Du lịch Quảng B&#236;nh thanh xu&#226;n nhất định phải
+                        đi một lần
+                      </a>
+                    </h5>
+                    <p class="mt-1 mb-1 spec-1">
+                      <i class="bi bi-clock"></i> 04/05/2025
+                    </p>
+                    <div class="mt-1 mb-1 spec-1 text-truncate-3">
+                      Thanh xu&#226;n l&#224; những chuyến đi vậy th&#236; ngại
+                      g&#236; m&#224; kh&#244;ng trải nghiệm tới c&#225;c địa
+                      điểm du lịch Quảng B&#236;nh. Sở hữu cảnh sắc thi&#234;n
+                      nhi&#234;n hoang sơ hiếm c&#243;, Quảng B&#236;nh g&#226;y
+                      hứng th&#250; với tour du lịch mạo hiểm th&#225;ch thức
+                      giới hạn bản th&#226;n. Đến với v&#249;ng đất nhiều nắng,
+                      nhiều gi&#243; n&#224;y bạn nhất định sẽ c&#243; nhiều
+                      trải nghiệm đ&#225;ng nhớ.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <link href="/assets/css/pagination.css" rel="stylesheet" />
+
+            <script>
+              function DataPage(page, url, GenHtml) {
+                debugger;
+                var formData = new FormData($('#frmFormSearch')[0]);
+                if (url.includes('?')) {
+                  url += '&';
+                } else {
+                  url += '?';
+                }
+                url += 'p=' + page;
+                $.ajax({
+                  url: url,
+                  type: 'POST',
+                  data: formData,
+                  processData: false,
+                  contentType: false,
+                  success: function (result) {
+                    $(GenHtml).html(result);
+                  },
+                  error: function (rs) {
+                    // Xử lý lỗi nếu có
+                    NotiError('Lỗi xử lý', rs.Message);
+                  },
+                });
+              }
+            </script>
+          </div>
+          <div class="col-md-3">
+            <div class="box-article rounded rounded-3">
+              <div class="box-article-header">
+                <a href="/doanh-nghiep1/">
+                  <span>Tin nổi bật</span>
+                </a>
+              </div>
+              <div class="box-article-content">
+                <a
+                  href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                  class="box-article-top hoverZoom"
+                >
+                  <div class="box-img hoverImg">
+                    <div
+                      href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                      title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
+                      class="ratio ratio-4x3"
+                    >
+                      <img
+                        src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut.png"
+                        title="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut.png"
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </div>
+                  </div>
+                  <h4>
+                    621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ
+                    <span class="fw-normal">(23/05/2024)</span>
+                  </h4>
+                </a>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i>
+                  <a
+                    href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-Sa2MmGzL4u-20021"
+                    title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ "
+                    >Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn
+                    130 tỷ <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i>
+                  <a
+                    href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
+                    title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                    >Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
+                    kh&#225;ch du lịch <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i>
+                  <a
+                    href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
+                    title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                    >Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ
+                    th&#225;ng 3 <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i>
+                  <a
+                    href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
+                    title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                    >S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y
+                    hội Văn h&#243;a <span>(23/05/2024)</span></a
+                  >
+                </article>
+              </div>
+            </div>
+
+            <div class="box-article rounded rounded-3">
+              <div class="box-article-header">
+                <a href="/doanh-nghiep1/">
+                  <span>Tin đọc nhiều</span>
+                </a>
+              </div>
+              <div class="box-article-content">
+                <a
+                  href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
+                  class="box-article-top hoverZoom"
+                >
+                  <div class="box-img hoverImg">
+                    <div
+                      title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
+                      class="ratio ratio-4x3"
+                    >
+                      <img
+                        src="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
+                        title="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        onerror="this.src='/assets/images/notfoundimage.png'"
+                      />
+                    </div>
+                  </div>
+                  <h4>
+                    S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội
+                    Văn h&#243;a <span class="fw-normal">(23/05/2024)</span>
+                  </h4>
+                </a>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i
+                  ><a
+                    href="/tin-tuc/du-lich-quang-binh-thanh-xuan-nhat-dinh-phai-di-mot-lan-uTUSaJNfph-10008"
+                    title=" Du lịch Quảng B&#236;nh thanh xu&#226;n nhất định phải đi một lần"
+                  >
+                    Du lịch Quảng B&#236;nh thanh xu&#226;n nhất định phải đi
+                    một lần <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i
+                  ><a
+                    href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
+                    title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
+                    >Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ
+                    th&#225;ng 3 <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i
+                  ><a
+                    href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
+                    title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
+                    >Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
+                    kh&#225;ch du lịch <span>(04/05/2025)</span></a
+                  >
+                </article>
+                <article class="box-article-item">
+                  <i class="fa fa-angle-right"></i
+                  ><a
+                    href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
+                    title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
+                    >621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ
+                    <span>(23/05/2024)</span></a
+                  >
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function SearchTinBai() {
+        var data = {
+          TitleFilter: $('#TitleFilter').val(),
+          ChuyenMucFilter: $('#ChuyenMucFilter').val(),
+        };
+        $.ajax({
+          url: '/Home/SearchTinBai',
+          type: 'POST',
+          data: data,
+          success: function (rs) {
+            $('#div_tinbai').html(rs);
+          },
+          error: function (xhr, status, error) {},
+        });
+      }
+    </script>
+    <div id="MasterModalFixed" class="modal fade"></div>
+    <div id="MasterModalPreview" class="modal fade" style="z-index: 1052"></div>
+    <div
+      id="MasterModal"
+      class="modal fade"
+      role="dialog"
+      data-keyboard="false"
+      data-backdrop="static"
+      style="z-index: 1051"
+    ></div>
+    <div
+      id="MasterModal2"
+      class="modal fade"
+      role="dialog"
+      data-keyboard="false"
+      data-backdrop="static"
+      style="z-index: 1052"
+    ></div>
+
+    <!-- Chatbox -->
+    <div
+      class="position-fixed"
+      style="bottom: 15px; right: 15px; z-index: 9998"
+    >
+      <a onclick="showChatBox()" class="chatbox-icon shadow">
+        <img src="/assets/images/chatbox.png" alt="" />
+      </a>
+    </div>
+
+    <div
+      id="chatbox"
+      class="position-fixed"
+      style="bottom: 110px; right: 40px; z-index: 9999; display: none"
+    >
+      <div class="chat_box shadow">
+        <div class="head_chat_box">
+          <div class="avata_name_chatbox">
+            <img src="/assets/images/chatbox-white.png" alt="" />
+            <strong>Cổng thông tin du lịch Hải Phòng</strong>
+          </div>
+          <div class="action_chatbox">
+            <i
+              class="bi bi-x-lg time_chatbox text-white"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </div>
+        <div class="body_chatbox">
+          <div class="content_chatbox"></div>
+          <div class="input_chatbox" style="">
+            <button onclick="Reset()" class="send_ask">
+              Reset
+              <i
+                class="fa fa-refresh"
+                aria-hidden="true"
+                style="color: #ffffff"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chatbox -->
+    <!-- Scroll To Top -->
+    <div id="myBtnScroll" class="myBtnScroll" title="Lên đầu trang">
+      <span>↑</span>
+    </div>
+    <!-- Scroll To Top -->
+    <!-- Footer -->
+    <div class="container-fluid footer text-white">
+      <div class="container">
+        <div class="row gx-0 justify-content-between gy-5 gy-lg-5">
+          <div class="col-lg-5 fw-bold col-11 footer-part">
+            <div
+              style="font-size: 16px"
+              class="text-uppercase footer-title"
+              data-keyconfig="footerCongThongTin"
+            >
+              Cổng thông tin du lịch Hải Phòng
+            </div>
+            <div class="footer-line" data-keyconfig="footergiayphep">
+              Giấy phép số 02/GP-TTPT do Sở Thông tin và Truyền thông thành phố
+              Hải Phòng cấp ngày 08/04/2021
+            </div>
+            <div class="footer-line" data-keyconfig="footerdiachi">
+              Địa chỉ: 72 Trần Phú, Ngô Quyền, Hải Phòng
+            </div>
+            <div class="footer-line">
+              <span data-keyconfig="footerdienthoai"
+                >Điện thoại: 0225.229.9799</span
+              ><br class="d-block d-md-none" />
+              <span class="ms-lg-5" data-keyconfig="footerhotline"
+                >Hotline: 0945.132.599</span
+              >
+            </div>
+            <div class="footer-line" data-keyconfig="footeremail">
+              Email: sodulich@haiphong.gov.vn
+            </div>
+          </div>
+          <div
+            class="col-lg-2 fw-bold col-11 px-5 d-none d-md-block footer-part"
+            id="div_truycap"
+          >
+            <div
+              style="font-size: 16px"
+              class="text-uppercase footer-title"
+              data-keyconfig="footerthongke"
+            >
+              THỐNG KÊ
+            </div>
+            <div class="w-100 d-flex justify-content-between footer-line">
+              <span data-keyconfig="footerLuottruycap"
+                >Lượt truy cập hiện tại:</span
+              >
+              <span id="countSession">6</span>
+            </div>
+            <div class="w-100 d-flex justify-content-between footer-line">
+              <span data-keyconfig="footerHomNay">Hôm nay:</span>
+              <span>19</span>
+            </div>
+            <div class="w-100 d-flex justify-content-between footer-line">
+              <span data-keyconfig="footerTuanNay">Tuần này:</span>
+              <span>1026</span>
+            </div>
+            <div class="w-100 d-flex justify-content-between footer-line">
+              <span data-keyconfig="footerTongluot">Tổng lượt truy cập:</span>
+              <span>4039</span>
+            </div>
+          </div>
+          <div class="col-lg-5 fw-bold col-11 ps-4 footer-part">
+            <div
+              style="font-size: 16px"
+              class="footer-title"
+              data-keyconfig="footertaiungdung"
+            >
+              Tải ứng dụng khám phá điểm đến
+            </div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col-lg-6 col-6">
+                <div class="app-download-img">
+                  <img
+                    src="/Uploads/QLLinkDoiTuong/google-play-download.png"
+                    alt="Google Play"
+                    class="img-fluid"
+                    onerror="this.src='/assets/images/notfoundimage.png'"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6 col-6">
+                <div class="app-download-img">
+                  <img
+                    src="/Uploads/QLLinkDoiTuong/appstore-download.png"
+                    alt="App Store"
+                    class="img-fluid"
+                    onerror="this.src='/assets/images/notfoundimage.png'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="position-fixed"
+      style="bottom: 15px; right: 15px; z-index: 9998"
+    >
+      <a onclick="showChatBox()" class="chatbox-icon">
+        <img src="/assets/images/chatbox.png" alt="" />
+      </a>
+    </div>
+    <div class="notifications"></div>
+
+    <!-- Footer -->
+    <div class="modal fade" id="modalMaster"></div>
+    <div class="modal fade" id="modalLogin" data-backdrop="static">
+      <style>
+        .grouplogin {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+
+        .grouplogin a {
+          font-weight: bold;
+        }
+
+        .form-group {
+          margin-bottom: 10px;
+        }
+
+        .btn-submit-login {
+          width: 100%;
+          padding: 5px;
+          font-size: 15px;
+          font-weight: bold;
+          margin-top: 15px;
+        }
+
+        .control-label {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .show-password {
+          right: 12px;
+          top: 9px;
+        }
+
+        /*Lam*/
+        .social-login div {
+          text-decoration: none;
+          position: relative;
+          text-align: center;
+          color: #fff;
+          margin-bottom: 10px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .social-login div.facebook {
+          background: #3b5998;
+        }
+        .social-login div.google {
+          background: #ea4335;
+        }
+      </style>
+      <div class="modal-dialog" style="max-width: 400px">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <h5 class="fw-bold">Đăng nhập vào hệ thống</h5>
+            <div
+              id="error-message"
+              class="text-center text-danger fs-5 fw-bolder mb-3"
+            ></div>
+            <div class="loginForm-Box">
+              <form
+                ReturnUrl=""
+                action="/Account/LoginPartial"
+                class="form-horizontal"
+                data-ajax="true"
+                data-ajax-failure="AjaxFormError"
+                data-ajax-method="POST"
+                data-ajax-success="AjaxFormLoginSuccess"
+                id="loginForm"
+                method="post"
+                role="form"
+              >
+                <input
+                  name="__RequestVerificationToken"
+                  type="hidden"
+                  value="Gw1-SfuXsEUEhZc1AUPEikXW3qOS7cLczYBl0-g4SBmkgDSdu7Gqkkhg39FKAl-8RSVIwuqzjvRjxh-WgQ6GSoXOCgUkpyG7-j_dllYR8B01"
+                />
+                <input type="hidden" value="/tin-tuc" name="returnUrl" />
+                <div class="col-sm-12 form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-sm-12" for="UserName"
+                      >T&#234;n đăng nhập</label
+                    >
+                    <div class="col-sm-12">
+                      <input
+                        class="form-control"
+                        data-val="true"
+                        data-val-maxlength="Độ dài tối đa là 50 ký tự"
+                        data-val-maxlength-max="50"
+                        data-val-minlength="Độ dài tối thiểu là 3 ký tự"
+                        data-val-minlength-min="3"
+                        data-val-required="Vui lòng nhập thông tin này"
+                        id="UserName"
+                        name="UserName"
+                        type="text"
+                        value=""
+                      />
+                      <span
+                        class="field-validation-valid text-danger"
+                        data-valmsg-for="UserName"
+                        data-valmsg-replace="true"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-12" for="Password"
+                      >Mật khẩu</label
+                    >
+                    <div class="col-sm-12 position-relative">
+                      <input
+                        class="form-control"
+                        data-val="true"
+                        data-val-required="Vui lòng nhập thông tin này"
+                        id="Password"
+                        name="Password"
+                        type="password"
+                      />
+                      <i class="fa fa-eye show-password" aria-hidden="true"></i>
+                      <span
+                        class="field-validation-valid text-danger"
+                        data-valmsg-for="Password"
+                        data-valmsg-replace="true"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input
+                        type="submit"
+                        value="Đăng nhập"
+                        class="btn-submit-login btn btn-primary btn-block"
+                      />
+                      <p class="grouplogin">
+                        <a href="/Account/Registerv2"
+                          >Đăng k&#253; t&#224;i khoản</a
+                        >
+                        <a href="/Account/ForgotPassword">Qu&#234;n mật khẩu</a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <center class="container_btn_login_social">
+                    <div
+                      id="g_id_onload"
+                      data-client_id="439782915618-mkmrtftfnm6253nn1orcoeuqpuro71ji.apps.googleusercontent.com"
+                      data-context="signin"
+                      data-ux_mode="popup"
+                      data-login_uri="https://dulichhp.ebizoffice.vn/account/logingoogle"
+                      data-auto_prompt="false"
+                    ></div>
+
+                    <div
+                      class="g_id_signin"
+                      data-type="standard"
+                      data-shape="rectangular"
+                      data-theme="outline"
+                      data-text="signin_with"
+                      data-size="large"
+                      data-locale="vi"
+                      data-logo_alignment="left"
+                    ></div>
+
+                    <div
+                      style="margin-top: 10px; width: 100%"
+                      class="fb-login-button"
+                      data-width=""
+                      data-size="large"
+                      data-button-type="continue_with"
+                      data-layout="default"
+                      data-auto-logout-link="false"
+                      data-use-continue-as="false"
+                      scope="public_profile,email"
+                      onlogin="fbLoginCustom()"
+                    ></div>
+                  </center>
+
+                  <script>
+                    window.fbAsyncInit = function () {
+                      FB.init({
+                        appId: '1156125508861606',
+                        cookie: true,
+                        xfbml: true,
+                        version: 'v19.0',
+                      });
+                      FB.AppEvents.logPageView();
+                    };
+
+                    (function (d, s, id) {
+                      var js,
+                        fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) {
+                        return;
+                      }
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+                      fjs.parentNode.insertBefore(js, fjs);
+                    })(document, 'script', 'facebook-jssdk');
+
+                    function AjaxCall(url, method, data, successCallback) {
+                      $.ajax({
+                        url: url,
+                        method: method,
+                        data: data,
+                        success: successCallback,
+                        error: function (xhr, status, error) {
+                          console.error(xhr.responseText);
+                        },
+                      });
+                    }
+
+                    function AjaxFormSuccess(rs) {
+                      if (rs.Status) {
+                        location.href = '/';
+                      } else {
+                        NotiError('Thất bại', rs.Message);
+                      }
+                    }
+
+                    function fbLoginCustom() {
+                      var token = $(
+                        'input[name="__RequestVerificationToken"]'
+                      ).val();
+                      FB.api(
+                        '/me',
+                        { fields: 'id,name,email' },
+                        function (response) {
+                          console.log(response);
+                          AjaxCall(
+                            '/Account/loginFacebook',
+                            'POST',
+                            {
+                              __RequestVerificationToken: token,
+                              id: response.id,
+                              name: response.name,
+                              email: response.email,
+                            },
+                            AjaxFormSuccess
+                          );
+                        }
+                      );
+                    }
+                  </script>
+                  <script
+                    src="https://accounts.google.com/gsi/client"
+                    async
+                    defer
+                  ></script>
+
+                  <script
+                    async
+                    defer
+                    crossorigin="anonymous"
+                    src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0&appId=1156125508861606"
+                    nonce="UKunLu5w"
+                  ></script>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        addScriptLibrary('/Scripts/jquery.validate.js');
+        addScriptLibrary('/Scripts/jquery.validate.unobtrusive.min.js');
+        addScriptLibrary('/Scripts/jquery.unobtrusive-ajax.min.js');
+
+        function HideModalLogin() {
+          $('#modalLogin').modal('hide');
+        }
+
+        function AjaxFormLoginSuccess(rs) {
+          debugger;
+          if (rs.Status) {
+            debugger;
+            //window.location.href = rs.Param;
+            NotiSuccess('Thông báo', rs.Message);
+            window.location.href = window.location.href;
+          } else {
+            NotiError('Thông báo', rs.Message);
+            $('#error-message').text(rs.Message);
+          }
+        }
+
+        $('.show-password').click(function () {
+          var passwordInput = $('#Password');
+          var eyeIcon = $(this);
+
+          if (passwordInput.attr('type') === 'password') {
+            passwordInput.attr('type', 'text');
+            eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+          } else {
+            passwordInput.attr('type', 'password');
+            eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+          }
+        });
+      </script>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/select2.min.js"></script>
+    <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/jquery-confirm.js"></script>
+    <script src="/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        var routeHub = $.connection.routeHub;
+
+        routeHub.client.routeChanged = function () {
+          $.ajax({
+            type: 'post',
+            url: '/Common/RouteChanged',
+            success: (rs) => {
+              if (rs.Status) {
+                console.log('routeChanged');
+              } else {
+                console.log(rs.Message);
+              }
+            },
+          });
+        };
+
+        // Bắt đầu kết nối
+        $.connection.hub
+          .start()
+          .done(function () {
+            console.log('Kết nối thành công đến hub.');
+          })
+          .fail(function (error) {
+            console.log('Không thể kết nối đến hub: ' + error);
+          });
+
+        // Xử lý sự kiện ngắt kết nối
+        $.connection.hub.disconnected(function () {
+          console.log('Mất kết nối đến hub.');
+          // Cập nhật view hoặc thực hiện hành động cần thiết khi ngắt kết nối
+          updateViewOnDisconnect();
+        });
+
+        function updateViewOnDisconnect() {
+          $.ajax({
+            url: '/Home/EndSession',
+            type: 'post',
+            success: (rs) => {
+              $('#countSession').html(rs);
+            },
+            error: null,
+          });
+        }
+      });
+    </script>
+    <script>
+      var swiper = new Swiper('.mySwiperDiscovery', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        // slidesPerView: 5,
+        initialSlide: 3,
+        // spaceBetween: 20,
+        loop: true,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 0,
+          modifier: 1,
+          slideShadows: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+      });
+      var swiper = new Swiper('.mySwiperhero', {
+        spaceBetween: 30,
+        effect: 'fade',
+        autoplay: {
+          delay: 2000,
+        },
+      });
+      var swiper = new Swiper('.mySwiperPotential', {
+        // slidesPerView: 5,
+        // spaceBetween: 30,
+        grabCursor: true,
+        // loop: true,
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is >= 640px
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // when window width is >= 768px
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          // when window width is >= 768px
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+      });
+
+      //Chuyển đổi ngôn ngữ
+      $(document).ready(function () {
+        $.ajax({
+          url: '/QLNoiDungChatBotArea/QLNoiDungChatBot/NoiDungChat',
+          type: 'GET',
+          data: null,
+          success: (rs) => {
+            $('.content_chatbox').html(rs);
+          },
+          error: null,
+        });
+        changeLang();
+      });
+
+      function SettingLang(key) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        let LanguageLocalStorage = localStorage.getItem('LanguageLocalStorage');
+
+        $.ajax({
+          url:
+            '/ConfigTrangChuArea/ConfigTrangChu/CreateByKey?key=' +
+            key +
+            '&lang=' +
+            LanguageLocalStorage,
+          type: 'GET',
+          data: null,
+          success: (rs) => {
+            $('#MasterModal').html(rs);
+            $('#MasterModal').modal('show');
+          },
+          error: null,
+        });
+      }
+      function SetCookieLang(lang, href) {
+        let LanguageLocalStorage = localStorage.getItem('LanguageLocalStorage');
+        $.ajax({
+          url: '/ConfigTrangChuArea/ConfigTrangChu/SetLanguage',
+          type: 'POST',
+          data: { Language: lang },
+          success: (rs) => {
+            debugger;
+            var currentUrl = window.location.href;
+            var checkTranslate = currentUrl.includes('translate.goog');
+
+            if (checkTranslate || href != null) {
+              window.location.href = 'https://dulichhp.ebizoffice.vn/';
+            } else {
+              window.location.href = window.location.href;
+            }
+          },
+          error: null,
+        });
+      }
+
+      function changeLang() {
+        debugger;
+
+        const searchParams = new URLSearchParams(window.location.search);
+        let LanguageLocalStorage = localStorage.getItem('LanguageLocalStorage');
+
+        const lang = searchParams.get('p-lang'); // price_descending
+
+        if (lang != null && lang != '') {
+          localStorage.setItem('LanguageLocalStorage', lang);
+          if (lang == 'TiengViet') {
+            localStorage.setItem(
+              'FlagLanguageLocalStorage',
+              '/assets/images/lang-vn.png'
+            );
+          }
+          if (lang == 'TiengAnh') {
+            localStorage.setItem(
+              'FlagLanguageLocalStorage',
+              '/assets/images/lang-en.png'
+            );
+          }
+          SetCookieLang(lang, 'loadPage');
+          /*window.location.href = "https://dulichhp.ebizoffice.vn";*/
+        }
+
+        var currentUrl = window.location.href;
+        var checkTranslate = currentUrl.includes('translate.goog');
+        if (checkTranslate) {
+          localStorage.setItem(
+            'FlagLanguageLocalStorage',
+            '/assets/images/china.png'
+          );
+          localStorage.setItem('LanguageLocalStorage', 'TiengTrung');
+        } else {
+          if (LanguageLocalStorage == 'TiengTrung') {
+            localStorage.setItem(
+              'FlagLanguageLocalStorage',
+              '/assets/images/lang-vn.png'
+            );
+            localStorage.setItem('LanguageLocalStorage', 'TiengViet');
+            SetCookieLang('TiengViet');
+          }
+        }
+
+        //var language = localStorage.getItem('LanguageLocalStorage');
+        //if (language == "TiengTrung" && checkTranslate == false) {
+        //    window.location.href = "https://dulichhp-ebizoffice-vn.translate.goog/?_x_tr_sch=http&_x_tr_sl=vi&_x_tr_tl=zh-CN&_x_tr_hl=vi&_x_tr_pto=wapp";
+        //}
+
+        var isAllowEdit = 'False'.toLowerCase() == 'true';
+        return new Promise((resolve, reject) => {
+          debugger;
+
+          if (lang != null && lang != '') {
+            SetCookieLang(lang);
+          } else {
+            if (LanguageLocalStorage) {
+              var pathImg = localStorage.getItem('FlagLanguageLocalStorage');
+              if (pathImg == null || pathImg == '') {
+                pathImg = '/assets/images/lang-vn.png';
+              }
+              $('#flagLangSelect').attr('src', pathImg);
+              if (LanguageLocalStorage !== 'TiengTrung') {
+                $.ajax({
+                  url: '/ConfigTrangChuArea/ConfigTrangChu/GetAllConfig',
+                  type: 'POST',
+                  data: { Language: LanguageLocalStorage },
+                  success: (rs) => {
+                    // lấy tất cả các phần tử có thuộc tính data-category
+                    let elements =
+                      document.querySelectorAll('[data-keyconfig]');
+
+                    // Hiển thị các phần tử đã lọc ra
+                    elements.forEach((el) => {
+                      var key = el.getAttribute('data-keyconfig');
+                      let config = rs.find((p) => p.Key === key);
+                      if (config) {
+                        if (config.TypeConfig == 'BackgroundColor') {
+                          $(el).css('background', config.BackGroundColor);
+                        } else if (config.TypeConfig == 'BackgroundImage') {
+                          $(el).css(
+                            'background-image',
+                            'url(' + config.BackGroundImg + ')'
+                          );
+                        } else if (config.TypeConfig == 'placeholder') {
+                          $(el).attr('placeholder', config.Content);
+                        } else {
+                          $(el).html(config.Content);
+                        }
+                      }
+                      if (isAllowEdit) {
+                        if ($(el).prop('tagName') === 'INPUT') {
+                          $(el).parent().css('position', 'relative');
+                          $(el)
+                            .parent()
+                            .append(
+                              `<span onclick='SettingLang("${key}")' class='config_button config_input'><i class='fa fa-cogs' ></i></span>`
+                            );
+                        } else {
+                          $(el).css('position', 'relative');
+                          $(el).append(
+                            `<span onclick='SettingLang("${key}")' class='config_button'><i class='fa fa-cogs' ></i></span>`
+                          );
+                        }
+                      }
+                    });
+                    resolve();
+                  },
+                  error: () => {
+                    reject();
+                  },
+                });
+              }
+            }
+          }
+        });
+      }
+
+      function SetLang(lang, target, href, pathImg) {
+        debugger;
+        var currentLang = localStorage.getItem('LanguageLocalStorage');
+
+        var currentUrl = window.location.href;
+        var checkTranslate = currentUrl.includes('translate.goog');
+        if (
+          checkTranslate &&
+          (currentLang == null || currentLang != 'TiengTrung')
+        ) {
+          currentLang = 'TiengTrung';
+        }
+
+        localStorage.setItem('LanguageLocalStorage', lang);
+        var img = $(target).find('img').attr('src');
+        localStorage.setItem('FlagLanguageLocalStorage', pathImg);
+
+        if (lang == 'TiengTrung') {
+          window.location.href = href;
+        } else {
+          if (currentLang == 'TiengTrung') {
+            localStorage.setItem('LanguageLocalStorage', lang);
+            window.location.href =
+              'https://dulichhp.ebizoffice.vn?p-lang=' + lang;
+          } else {
+            SetCookieLang(lang);
+          }
+        }
+      }
+    </script>
+
+    <script>
+      let notifications = document.querySelector('.notifications');
+      function createToast(type, icon, title, text) {
+        let newToast = document.createElement('div');
+        newToast.innerHTML = `
+                                                                                                                                        <div class="toastCustom ${type}">
+                                                                                                                                            <i class="${icon}"></i>
+                                                                                                                                            <div class="content">
+                                                                                                                                                <div class="title">${title}</div>
+                                                                                                                                                <span>${text}</span>
+                                                                                                                                            </div>
+                                                                                                                                            <i class="bi bi-arrow-right" onclick="(this.parentElement).remove()"></i>
+                                                                                                                                        </div>`;
+        notifications.appendChild(newToast);
+        newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+      }
+      //success.onclick = function () {
+      //    let type = 'success';
+      //    let icon = 'fa-solid fa-circle-check';
+      //    let title = 'Success';
+      //    let text = 'This is a success toast.';
+      //    createToast(type, icon, title, text);
+      //}
+      //error.onclick = function () {
+      //    let type = 'error';
+      //    let icon = 'fa-solid fa-circle-exclamation';
+      //    let title = 'Error';
+      //    let text = 'This is a error toast.';
+      //    createToast(type, icon, title, text);
+      //}
+      //warning.onclick = function () {
+      //    let type = 'warning';
+      //    let icon = 'fa-solid fa-triangle-exclamation';
+      //    let title = 'Warning';
+      //    let text = 'This is a warning toast.';
+      //    createToast(type, icon, title, text);
+      //}
+      //info.onclick = function () {
+      //    let type = 'info';
+      //    let icon = 'fa-solid fa-circle-info';
+      //    let title = 'Info';
+      //    let text = 'This is a info toast.';
+      //    createToast(type, icon, title, text);
+      //}
+    </script>
+  </body>
+</html>
