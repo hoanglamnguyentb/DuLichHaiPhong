@@ -256,39 +256,6 @@
     <!-- Header -->
 
     <!-- Header -->
-    <!-- Header -->
-    <script>
-      document
-        .getElementById('inputSearchHome')
-        .addEventListener('keypress', function (event) {
-          if (event.keyCode === 13) {
-            // 13 is the Enter key code
-            event.preventDefault(); // Prevents the default form submission
-            //document.getElementById("frmSearchHome").submit(); // Manually submits the form
-
-            var valserarch = $('#inputSearchHome').val();
-            window.location.href = `/Home/ListSearchAll?valSearch=${valserarch}`;
-          }
-        });
-
-      function OpenLogin() {
-        $('#modalLogin').modal('show');
-      }
-
-      //MenuEndUser
-      document
-        .getElementById('checkbox_toggle')
-        .addEventListener('change', function () {
-          var slideMenu = document.getElementById('slide_menu');
-          if (this.checked) {
-            slideMenu.classList.add('show-menu');
-          } else {
-            slideMenu.classList.remove('show-menu');
-          }
-        });
-    </script>
-
-    <!-- Header -->
     <button
       class="sv-btn btn btn-white"
       data-bs-toggle="dropdown"
