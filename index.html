@@ -2,169 +2,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/DuLichHaiPhong/assets/images/favicon.png"
-    />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
     <title>Du lịch Hải Phòng | Trang chủ</title>
-    <link
-      href="/DuLichHaiPhong/assets/css/bootstrap5.min.css"
-      rel="stylesheet"
-    />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="/DuLichHaiPhong/assets/css/swiper-bundle.min.css"
-    />
+    <meta property="og:url" content="/su-kien/le-hoi-trinh-dien-dieu-nghe-thuat-OP6uA32Cwm-15" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lễ hội tr&#236;nh diễn diều nghệ thuật" />
+    <meta property="og:description" />
+    <meta property="og:image" content="/DuLichHaiPhong/assets/images/Here5-Mark.png" />
+    <link href="/assets/css/bootstrap5.min.css" rel="stylesheet" />
 
-    <link href="/DuLichHaiPhong/assets/bootstrap5.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/DuLichHaiPhong/assets/css/style.css" />
-    <link rel="stylesheet" href="/DuLichHaiPhong/assets/css/utilities.css" />
-    <link rel="stylesheet" href="/DuLichHaiPhong/assets/css/responsive.css" />
-    <link href="/DuLichHaiPhong/assets/css/chatbox.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <link href="/assets/bootstrap5.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+    <link rel="stylesheet" href="/assets/css/utilities.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link href="/assets/css/chatbox.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="/DuLichHaiPhong/assets/js/bootstrap5.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap5.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link
-      href="/DuLichHaiPhong/assets/font-awesome/4.5.0/css/font-awesome.min.css"
+      href="/assets/font-awesome/4.5.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
     <link
-      href="/DuLichHaiPhong/assets/plugins/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+      href="/assets/plugins/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
     <script src="/Scripts/jquery.validate.js"></script>
     <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="/Scripts/AdditionValidation.js"></script>
-
-    <style>
-      .mySwiperHero.swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .mySwiperHero .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .mySwiperHero .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .mySwiperDiscovery.swiper {
-        width: 100%;
-        padding-bottom: 50px;
-        height: 500px;
-      }
-
-      .mySwiperDiscovery .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 400px;
-        border-radius: 20px;
-        overflow: hidden;
-      }
-
-      .mySwiperDiscovery .swiper-slide img {
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .mySwiperPotential.swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .mySwiperPotential .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .mySwiperPotential .swiper-slide img {
-        display: block;
-        /*            width: 100%;
-                height: 100%;
-                object-fit: cover;*/
-      }
-
-      /* Chrome, Safari, Edge, Opera */
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      /* Firefox */
-      input[type='number'] {
-        -moz-appearance: textfield;
-      }
-
-      .config_button {
-        position: absolute;
-        color: red;
-        top: 0;
-      }
-
-      .config_input {
-        right: 0;
-      }
-
-      .config_button:hover {
-        cursor: pointer;
-        color: #c57a7a;
-      }
-
-      #createConfigTrangChuForm .modal-header {
-        display: flex;
-        background: #1cb5c2;
-        flex-shrink: 0;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 1rem;
-        border-bottom: 1px solid #dee2e6;
-        border-top-left-radius: calc(0.3rem - 1px);
-        border-top-right-radius: calc(0.3rem - 1px);
-        flex-direction: row-reverse;
-      }
-
-      #createConfigTrangChuForm .modal-header > button {
-        border-color: transparent;
-        background: white;
-        color: black;
-        font-size: xx-large;
-        border-radius: 1.5em;
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        font-weight: 500;
-        padding-bottom: 0.5%;
-      }
-    </style>
-
-    <style>
-      * {
-        font-family: 'Quicksand', sans-serif;
-      }
-    </style>
 
     <script src="/Scripts/Common.js"></script>
 
@@ -181,464 +55,205 @@
     </script>
   </head>
   <body>
-    <!-- Header -->
-
-    <!-- Header -->
-    <div class="container-fluid header-top d-flex">
-      <div class="container header-top-left">
-        <div class="header-social-bg w-100">
-          <div
-            class="header-social d-flex justify-content-between align-items-center"
-          >
-            <div class="header-social-title">
-              <span data-keyconfig="topbarName"
-                >Cổng thông tin du lịch Thành phố Hải Phòng</span
-              >
-              <span id="NhietDoHomNay"></span>
-            </div>
-
-            <div class="header-social-link">
-              <ul class="d-flex">
-                <li>
-                  <a
-                    href="https://www.youtube.com/channel/UCdcZwa9UUpXp6-F9m0u-e0Q"
-                  >
-                    <img
-                      src="Uploads/QLLinkDoiTuong/youtube-icon18052024-034810.png"
-                      alt="Youtube"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.tiktok.com/@haiphongtourismofficial?lang=en"
-                  >
-                    <img
-                      src="Uploads/QLLinkDoiTuong/tiktok-icon.png"
-                      alt="TikTok"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/SoDulichHaiPhong">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/facebook-icon.png"
-                      alt="Facebook"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/haiphongtourism/">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/instargram-icon18052024-034934.png"
-                      alt="Instargram"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div
-          class="header-top-right flex-shrink-0 d-flex align-items-center justify-content-end text-white"
+    <!-- Super Mobile -->
+    <div class="container-fluid header-mobile">
+      <div class="d-flex justify-content-between align-items-center h-100 px-3">
+        <span class="header-mobile__togglemenu"
+          ><i class="bi bi-list fs-4"></i
+        ></span>
+        <span class="header-mobile-title"
+          >Cổng thông tin du lịch thành phố Hải Phòng</span
         >
-          <div class="dropdown dropdown-menu-user text-center">
-            <div
-              type="button"
-              class="text-center d-flex align-items-center flex-column"
-              data-bs-toggle="dropdown"
-            >
-              <div class="navbar-top-user">
-                <img
-                  src="/DuLichHaiPhong/assets/images/user-icon.png"
-                  onclick="OpenLogin()"
-                  alt="Alternate Text"
-                />
-              </div>
-              <div>
-                <a
-                  href="javascript:void(0)"
-                  onclick="OpenLogin()"
-                  title="Đăng nhập"
-                  data-keyconfig="topbardangnhap"
-                  >Đăng nhập</a
-                >
-              </div>
-            </div>
+        <span class="header-mobile-title__loginicon"
+          ><i class="bi bi-person-fill fs-4"></i
+        ></span>
+      </div>
+    </div>
+
+    <div class="mobile-left-full p-3">
+      <div class="d-flex justify-content-between">
+        <span class="header-mobile__leftcolse"
+          ><i class="bi bi-x-lg fs-4"></i
+        ></span>
+        <div class="d-flex">
+          <div>
+            <div>Hải phòng</div>
+            <div class="text-danger">Thứ 6, 31/5/2024</div>
           </div>
-          <div class="dropdown dropdown-menu-language">
-            <div
-              type="button"
-              class="dropdown-toggle-menu-language d-flex align-items-center flex-column"
-              data-bs-toggle="dropdown"
-            >
-              <div class="d-flex align-items-center w-100 justify-content-end">
-                <div class="navbar-top-user">
-                  <img
-                    id="flagLangSelect"
-                    src="/DuLichHaiPhong/assets/images/lang-vn.png"
-                    alt=""
-                  />
-                </div>
-                <img
-                  class="toggle-icon ms-2"
-                  src="/DuLichHaiPhong/assets/images/toggle-icon.png"
-                  alt=""
-                />
-              </div>
-              <div data-keyconfig="topbarngonngu">Ngôn ngữ</div>
-            </div>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" onclick="SetLang('TiengViet',this)"
-                  ><img
-                    src="/DuLichHaiPhong/assets/images/lang-vn.png"
-                    alt=""
-                  />
-                  Việt Nam</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" onclick="SetLang('English',this)"
-                  ><img
-                    src="/DuLichHaiPhong/assets/images/lang-en.png"
-                    alt=""
-                  />
-                  English</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" onclick="SetLang('TiengTrung',this)"
-                  ><img src="/DuLichHaiPhong/assets/images/china.png" alt="" />
-                  中国</a
-                >
-              </li>
-            </ul>
+          <div class="h-100 d-flex align-items-center fw-bold fs-3 ps-2">
+            260c
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid header-bottom position-relative">
-      <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light">
-          <div class="container-fluid flex-mobile">
-            <a class="navbar-brand" href="/">
-              <img src="/DuLichHaiPhong/assets/images/logo.png" alt="" />
-            </a>
-            <span class="nav-item-mobile-show navbar-brand-slogan"
-              >Cổng thông tin du lịch Thành phố Hải Phòng</span
-            >
+      <form
+        class="d-flex position-relative align-items-center search-form my-3"
+        id="frmSearchHome"
+      >
+        <input
+          class="form-control"
+          data-keyconfig="placeholder_search_home"
+          id="inputSearchHome"
+          type="search"
+          placeholder="Từ khóa tìm kiếm"
+          aria-label="Search"
+          style="padding: 10px 35px 10px 10px !important"
+        />
+
+        <div
+          class="search-icon position-absolute top-50 end-0 translate-middle"
+          style="right: 5px !important"
+        >
+          <i class="bi bi-search fs-4"></i>
+        </div>
+      </form>
+      <div
+        class="accordion accordion-flush accordion-simple accordion-mobile"
+        id="accordionFlushExample"
+      >
+        <div class="accordion-item border-bottom">
+          <h2 class="accordion-header pb-2" id="flush-headingOne">
             <button
-              class="navbar-toggler"
+              class="accordion-button px-0 collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
+              data-bs-target="#flush-collapseOne"
               aria-expanded="false"
-              aria-label="Toggle navigation"
+              aria-controls="flush-collapseOne"
             >
-              <span class="navbar-toggler-icon"></span>
+              <div class="control-label">Loại địa điểm</div>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li
-                  class="nav-item navbar-toggler-menu-icon nav-item-mobile-hide"
-                >
-                  <input type="checkbox" id="checkbox_toggle" />
-                  <label class="nav-link icon_menu" for="checkbox_toggle">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                  </label>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/page/gioi-thieu">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/tour-du-lich"
-                    >Kh&#225;m ph&#225;</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/lap-ke-hoach">Lập kế hoạch</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/tien-ich-du-lich"
-                    >Tiện &#237;ch du lịch</a
-                  >
-                </li>
-              </ul>
-
-              <form
-                class="d-flex position-relative align-items-center search-form m-0"
-                id="frmSearchHome"
-              >
-                <input
-                  class="form-control"
-                  data-keyconfig="placeholder_search_home"
-                  id="inputSearchHome"
-                  type="search"
-                  placeholder="Từ khoá tìm kiếm"
-                  aria-label="Search"
-                  style="padding: 10px 10px 10px 35px !important"
-                />
-
-                <div
-                  class="search-icon position-absolute top-50 start-0 translate-middle"
-                  style="left: 20px !important"
-                >
-                  <i class="bi bi-search fs-4"></i>
-                </div>
-              </form>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse mb-0 collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample01"
+            style=""
+          >
+            <div class="accordion-body">
+              <div class="border-bottom py-3">
+                <a href="">1</a>
+              </div>
+              <div class="border-bottom py-3">
+                <a href="">2</a>
+              </div>
+              <div class="border-bottom py-3">
+                <a href="">3</a>
+              </div>
             </div>
           </div>
-        </nav>
-
-        <div id="container_slide_menu">
-          <section id="slide_menu">
-            <div class="content_menu_t scollbar_custom">
-              <div class="wrap_items">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a class="header_link d-flex" href="/page/gioi-thieu"
-                            >Giới thiệu</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a href="/page/gioi-thieu" title="Giới thiệu"
-                              >Giới thiệu</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/tin-tuc" title="Tin tức">Tin tức</a>
-                          </li>
-                          <li>
-                            <a href="/su-kien" title="Sự kiện">Sự kiện</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a
-                            class="header_link d-flex"
-                            href="javascript:void(0)"
-                            >Du lịch</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a href="/diem-den" title="Di chuyển">Di chuyển</a>
-                          </li>
-                          <li>
-                            <a href="/co-so-luu-tru" title="Lưu tr&#250;"
-                              >Lưu tr&#250;</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/tour-du-lich" title="Kh&#225;m ph&#225;"
-                              >Kh&#225;m ph&#225;</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/dia-diem-an-uong" title="Ẩm thực"
-                              >Ẩm thực</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a class="header_link d-flex" href="/tien-ich-du-lich"
-                            >Tiện &#237;ch du lịch</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li><a href="/vr360" title="VR360">VR360</a></li>
-                          <li>
-                            <a href="/ban-do-du-lich" title="Bản đồ du lịch"
-                              >Bản đồ du lịch</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="javascript:void(0)"
-                              title="Cẩm nang du lịch"
-                              >Cẩm nang du lịch</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/goi-y-thong-minh"
-                              title="Gợi &#253; th&#244;ng minh"
-                              >Gợi &#253; th&#244;ng minh</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/tin-tuc" title="Tạo lịch tr&#236;nh"
-                              >Tạo lịch tr&#236;nh</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a
-                            class="header_link d-flex"
-                            href="javascript:void(0)"
-                            >Danh mục</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a
-                              href="/doanh-nghiep-lu-hanh"
-                              title="Doanh nghiệp Lữ h&#224;nh"
-                              >Doanh nghiệp Lữ h&#224;nh</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/cay-xang" title="C&#226;y xăng"
-                              >C&#226;y xăng</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/co-so-kham-chua-benh"
-                              title="Cơ sở kh&#225;m chữa bệnh, hiệu thuốc"
-                              >Cơ sở kh&#225;m chữa bệnh, hiệu thuốc</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/phuong-tien-cong-cong"
-                              title="Phương tiện c&#244;ng cộng"
-                              >Phương tiện c&#244;ng cộng</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        </div>
+        <div class="accordion-item border-bottom">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              <div class="control-label">Loại phí</div>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse show mb-0"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample03"
+          >
+            <div class="accordion-body">
+              <div class="d-flex mb-3">
+                <label class="checkbox-container" for="lstTypeChiPhiFilter-1">
+                  <input
+                    type="checkbox"
+                    name="lstTypeChiPhiFilter"
+                    id="lstTypeChiPhiFilter-1"
+                    value="1"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="ms-3" for="lstTypeChiPhiFilter-1">Miễn phí</label>
               </div>
-
-              <div class="wrap_items">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a
-                            class="header_link d-flex"
-                            href="javascript:void(0)"
-                            >Media</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a href="/thu-vien-anh" title="Thư viện ảnh"
-                              >Thư viện ảnh</a
-                            >
-                          </li>
-                          <li><a href="/video" title="Video">Video</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a
-                            class="header_link d-flex"
-                            href="javascript:void(0)"
-                            >Li&#234;n hệ</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a href="javascript:void(0)" title="Li&#234;n hệ"
-                              >Li&#234;n hệ</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/page/ho-tro-khan-cap"
-                              title="Hỗ trợ khẩn cấp"
-                              >Hỗ trợ khẩn cấp</a
-                            >
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" title="Hỏi đ&#225;p"
-                              >Hỏi đ&#225;p</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="box_items">
-                        <header>
-                          <a
-                            class="header_link d-flex"
-                            href="javascript:void(0)"
-                            >Mạng x&#227; hội</a
-                          >
-                        </header>
-
-                        <ul class="sub_menu scollbar_custom">
-                          <li>
-                            <a href="javascript:void(0)" title="Facebook"
-                              >Facebook</a
-                            >
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" title="Tiktok"
-                              >Tiktok</a
-                            >
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" title="Youtube"
-                              >Youtube</a
-                            >
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" title="Instagram"
-                              >Instagram</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="d-flex mb-3">
+                <label class="checkbox-container" for="lstTypeChiPhiFilter-2">
+                  <input
+                    type="checkbox"
+                    name="lstTypeChiPhiFilter"
+                    id="lstTypeChiPhiFilter-2"
+                    value="2"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="ms-3" for="lstTypeChiPhiFilter-2">Trả phí</label>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="mobile-right-full p-3">
+      <div class="d-flex justify-content-between">
+        <span>&nbsp;</span>
+        <span class="header-mobile-title"
+          >Cổng thông tin du lịch thành phố Hải Phòng</span
+        >
+        <span class="header-mobile__leftcolse"
+          ><i class="bi bi-x-lg fs-4"></i
+        ></span>
+      </div>
+      <div class="my-3">
+        <div class="row g-0">
+          <button class="col-6 btn btn-lg btn-primary">Đăng nhập</button>
+          <button class="col-6 btn btn-lg">Đăng ký</button>
+        </div>
+        <div class="w-100">
+          <div class="text-center my-3">với các tài khoản mạng xã hội</div>
+          <div class="row g-0">
+            <div class="col-6 border border-danger">Google</div>
+            <div class="col-6 border border-primary">Facebook</div>
+          </div>
+        </div>
+        <div class="position-relative text-center text-middle-line my-3">
+          <span class="">hoặc</span>
+        </div>
+        <div class="custom-select mt-3 pt-3">
+          <label class="filter__ttl">Tên đăng nhập</label>
+          <input
+            class="form-control my-2 form-input-simple"
+            placeholder="Nhập tên tài khoản đăng nhập"
+          />
+        </div>
+        <div class="custom-select mt-3 pt-3">
+          <label class="filter__ttl">Mật khẩu</label>
+          <div class="position-relative">
+            <input
+              type="password"
+              class="form-control my-2 form-input-simple input-password"
+              placeholder="Mật khẩu"
+            />
+            <span
+              class="position-absolute top-50 end-0 translate-middle-y p-3 h-100"
+            >
+              <i class="bi bi-eye showPassword"></i>
+            </span>
+          </div>
+        </div>
+        <div class="text-end my-3">
+          <span class="fst-italic" style="color: rgba(128, 128, 128, 1)"
+            >Quên mật khẩu?</span
+          >
+        </div>
+        <div>
+          <button class="btn btn-primary w-100 btn-lg">Đăng nhập</button>
+        </div>
+      </div>
+    </div>
+    <!-- Super Mobile -->
+    <!-- Header -->
+
+    <!-- Header -->
     <!-- Header -->
     <script>
       document
@@ -672,2383 +287,80 @@
     </script>
 
     <!-- Header -->
+    <button
+      class="sv-btn btn btn-white"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <i class="bi bi-share"></i> Chia sẻ
+    </button>
+    <ul class="dropdown-menu" style="">
+      <li>
+        <a
+          class="dropdown-item facebook"
+          title="Share on Facebook"
+          rel="nofollow"
+          href=""
+          onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+          ><i class="bi bi-facebook"></i> Facebook</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item email-share"
+          title="Share by Email"
+          rel="nofollow"
+          href=""
+          target="_self"
+          ><i class="bi bi-envelope-at"></i> Email</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item copy-link" title="Copy link"
+          ><i class="bi bi-clipboard-check"></i> Copy link</a
+        >
+      </li>
+    </ul>
 
     <div class="container-fluid position-relative">
       <div class="container">
         <div class="hero"></div>
       </div>
       <div class="position-absolute bottom-0 start-0 w-100 h-100 hero-mark">
-        <img src="/DuLichHaiPhong/assets/images/Here5-Mark.png" alt="" />
+        <img src="/assets/images/Here5-Mark.png" alt="" />
       </div>
       <div
         class="swiper mySwiperHero position-absolute top-0 start-0 w-100 h-100"
       >
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="/DuLichHaiPhong/assets/images/hero-slider-01.png" />
+            <img src="/assets/images/hero-slider-01.png" />
           </div>
           <div class="swiper-slide">
-            <img src="/DuLichHaiPhong/assets/images/hero-slider-02.png" />
+            <img src="/assets/images/hero-slider-02.png" />
           </div>
           <div class="swiper-slide">
-            <img src="/DuLichHaiPhong/assets/images/hero-slider-03.png" />
+            <img src="/assets/images/hero-slider-03.png" />
           </div>
         </div>
       </div>
-    </div>
-    <!-- Intro -->
-    <div class="container-fluid intro-01">
-      <div class="container intro-wrapper intro-wrapper-01 border border-0">
-        <div class="row gx-lg-5 justify-content-center">
-          <div class="intro-left">
-            <div class="intro-title">
-              <div data-keyconfig="HomeFromHaiPhong">from Hai Phong</div>
-              <div class="w-100">
-                <span data-keyconfig="HomeWithLove">With Love !</span
-                >&nbsp;&nbsp;
-              </div>
-            </div>
-          </div>
-          <div class="intro-left-desc">
-            <p class="intro-content" data-keyconfig="HomeSloganHaiPhong">
-              Hải Phòng khéo tạo nhớ thương từ phong cảnh, ẩm thực, đến sự nhiệt
-              tình, cởi mở và mến khách của con người nơi đây. Nếu một lần đến
-              với Hải Phòng, chắc chắn bạn sẽ phải lòng mảnh đất này. Hãy đến để
-              trải nghiệm và cảm nhận nhé.
-            </p>
-          </div>
-          <!-- <div class="col-11 col-xl-6 col-lg-11 intro-album">
-              <div class="position-relative w-100 h-100">
-                <div class="intro-img-01 shadow-lg">
-                  <img src="~/DuLichHaiPhong/assets/images/intro-img-01.png" alt="" />
-                </div>
-                <div class="intro-img-02 shadow-lg">
-                  <img src="~/DuLichHaiPhong/assets/images/intro-img-02.png" alt="" />
-                </div>
-                <div class="intro-img-03">
-                  <img src="~/DuLichHaiPhong/assets/images/intro-img-03.png" alt="" />
-                </div>
-              </div>
-            </div> -->
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid intro-02">
-      <div
-        class="container intro-wrapper border border-0 row justify-content-center"
-      >
-        <div class="col-11 col-lg-12">
-          <div
-            class="intro-link row justify-content-center flex-wrap flex-lg-nowrap g-lg-5"
-          >
-            <a class="intro-link-item col-4 col-lg" href="/diem-den">
-              <div class="intro-link-item-img">
-                <img
-                  src="Uploads/QLLinkDoiTuong/dichuyen22052024-033917.png"
-                  alt="Di chuyển"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-              <div class="intro-link-item-title">Di chuyển</div>
-            </a>
-            <a class="intro-link-item col-4 col-lg" href="/co-so-luu-tru">
-              <div class="intro-link-item-img">
-                <img
-                  src="Uploads/QLLinkDoiTuong/luutru22052024-033940.png"
-                  alt="Lưu tr&#250;"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-              <div class="intro-link-item-title">Lưu tr&#250;</div>
-            </a>
-            <a class="intro-link-item col-4 col-lg" href="/tour-du-lich">
-              <div class="intro-link-item-img">
-                <img
-                  src="Uploads/QLLinkDoiTuong/khampha22052024-033954.png"
-                  alt="Kh&#225;m ph&#225;"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-              <div class="intro-link-item-title">Kh&#225;m ph&#225;</div>
-            </a>
-            <a class="intro-link-item col-4 col-lg" href="/dia-diem-an-uong">
-              <div class="intro-link-item-img">
-                <img
-                  src="Uploads/QLLinkDoiTuong/amthuc22052024-034014.png"
-                  alt="Ẩm thực"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-              <div class="intro-link-item-title">Ẩm thực</div>
-            </a>
-            <a class="intro-link-item col-4 col-lg" href="/noi-bat">
-              <div class="intro-link-item-img">
-                <img
-                  src="Uploads/QLLinkDoiTuong/noibat22052024-034030.png"
-                  alt="Nổi bật"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-              <div class="intro-link-item-title">Nổi bật</div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Intro -->
-    <!-- Big-event -->
-    <div class="container-fluid big-event">
-      <div
-        class="guide-title text-uppercase big-event-title"
-        data-keyconfig="HomeSuKienNoiBat"
-      >
-        Sự kiện nổi bật
-      </div>
-      <div class="container">
-        <div class="big-event-img">
-          <a
-            href="/su-kien/kite-art-performance-festival-pixafsgV6S-16"
-            alt="Sự kiện nổi bật"
-          >
-            <img
-              src="Uploads/2024/05/23/admin_1/RegisterTinBai\photo_2024-05-22_09-09-13.jpg"
-              alt=" Kite art performance festival"
-              onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- Big-event -->
     <!-- Guide -->
-    <div class="containter-fluid guide">
-      <div class="container">
-        <div
-          class="guide-title text-uppercase"
-          data-keyconfig="HomeTienIchDuLich"
-        >
-          Tiện &#237;ch du lịch
-        </div>
-        <div class="guide-items">
-          <div class="row justify-content-center g-3">
-            <div class="guide-item-wrapper col-3 col-lg">
-              <a
-                class="guide-item d-flex align-items-center flex-column shadow h-100"
-                href="/vr360"
-              >
-                <div class="guide-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/VR360.png"
-                    alt="VR 360"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-                <div class="guide-item-desc">
-                  <div class="guide-item-title">VR 360</div>
-                </div>
-              </a>
-            </div>
-            <div class="guide-item-wrapper col-3 col-lg">
-              <a
-                class="guide-item d-flex align-items-center flex-column shadow h-100"
-                href="/ban-do-du-lich"
-              >
-                <div class="guide-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/BanDoDuLich.png"
-                    alt="Bản đồ du lịch"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-                <div class="guide-item-desc">
-                  <div class="guide-item-title">Bản đồ du lịch</div>
-                </div>
-              </a>
-            </div>
-            <div class="guide-item-wrapper col-3 col-lg">
-              <a
-                class="guide-item d-flex align-items-center flex-column shadow h-100"
-                href="/cam-nang-du-lich"
-              >
-                <div class="guide-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/CamNangDuLich.png"
-                    alt="Cẩm nang du lịch"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-                <div class="guide-item-desc">
-                  <div class="guide-item-title">Cẩm nang du lịch</div>
-                </div>
-              </a>
-            </div>
-            <div class="guide-item-wrapper col-3 col-lg">
-              <a
-                class="guide-item d-flex align-items-center flex-column shadow h-100"
-                href="/goi-y-thong-minh"
-              >
-                <div class="guide-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/GoiYThongMinh.png"
-                    alt="Gợi &#253; th&#244;ng minh"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-                <div class="guide-item-desc">
-                  <div class="guide-item-title">Gợi &#253; th&#244;ng minh</div>
-                </div>
-              </a>
-            </div>
-            <div class="guide-item-wrapper col-3 col-lg">
-              <a
-                class="guide-item d-flex align-items-center flex-column shadow h-100"
-                href="/tao-lich-trinh"
-              >
-                <div class="guide-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/TaoLichTrinh22052024-025107.png"
-                    alt="Tạo lịch tr&#236;nh"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-                <div class="guide-item-desc">
-                  <div class="guide-item-title">Tạo lịch tr&#236;nh</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Discovery -->
-      <div class="container map-slide">
-        <div class="row g-3 intro-video pt-5">
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/NhaHatThanhPho.png"
-              href="/vr360/11"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/NhaHatThanhPho.png"
-                alt="Nh&#224; h&#225;t th&#224;nh phố"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">
-                  Nh&#224; h&#225;t th&#224;nh phố
-                </div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-113833.png"
-                  alt="Nh&#224; h&#225;t th&#224;nh phố"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/CatBa.png"
-              href="/vr360/12"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/CatBa.png"
-                alt="C&#225;t B&#224;"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">
-                  C&#225;t B&#224;
-                </div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-113944.png"
-                  alt="C&#225;t B&#224;"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/BuuDienThanhPho.png"
-              href="/vr360/13"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/BuuDienThanhPho.png"
-                alt="Bưu điện th&#224;nh phố"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">
-                  Bưu điện th&#224;nh phố
-                </div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-114022.png"
-                  alt="Bưu điện th&#224;nh phố"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/VinhLanHa.png"
-              href="/vr360/14"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/VinhLanHa.png"
-                alt="Vịnh Lan Hạ"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">Vịnh Lan Hạ</div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-114100.png"
-                  alt="Vịnh Lan Hạ"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/TrangKenhBachDang.png"
-              href="/vr360/15"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/TrangKenhBachDang.png"
-                alt="Tr&#224;ng K&#234;nh Bạch Đằng"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">
-                  Tr&#224;ng K&#234;nh Bạch Đằng
-                </div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-114132.png"
-                  alt="Tr&#224;ng K&#234;nh Bạch Đằng"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-lg-4">
-            <a
-              class="intro-video-item intro-video-item-vr"
-              data-url="Uploads/QLLinkDoiTuong/DoSon.png"
-              href="/vr360/16"
-            >
-              <div class="intro-video-item-overlay"></div>
-              <img
-                src="Uploads/QLLinkDoiTuong/DoSon.png"
-                alt="Đồ Sơn"
-                class="intro-video-item-thumbnail"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-              <div class="intro-video-item-play w-100">
-                <div class="text-white text-center mt-2 w-100">Đồ Sơn</div>
-                <img
-                  src="Uploads/QLLinkDoiTuong/VR36017052024-114213.png"
-                  alt="Đồ Sơn"
-                  class=""
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Discovery -->
-    </div>
-    <!-- Guide -->
-    <!-- News and Event -->
-    <div class="container nae">
-      <div class="row gx-3 justify-content-center">
-        <!-- News -->
-        <div class="col-xl-8 col-lg-11">
-          <div class="guide-title news-title text-start">
-            <a href="/tin-tuc" title="Tin tức" data-keyconfig="HomeTinTuc">
-              Tin tức
-            </a>
-          </div>
-          <div class="row g-3 gx-0">
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut.png"
-                      alt="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/621000-luot-khach-do-ve-hai-phong-dip-le-7QE2kXkc5b-20020"
-                        title="621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ"
-                      >
-                        621.000 lượt kh&#225;ch đổ về Hải Ph&#242;ng dịp lễ
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        18
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">2</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-112714.png"
-                      alt="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/huyen-cat-hai-5-pha-moi-voi-tong-muc-dau-tu-hon-130-ty-dong-H4KDeHAkLk-20021"
-                        title="Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư hơn 130 tỷ đồng"
-                      >
-                        Huyện C&#225;t Hải: 5 ph&#224; mới với tổng mức đầu tư
-                        hơn 130 tỷ đồng
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        18
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">1</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-113130.png"
-                      alt="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/huyen-cat-hai-phan-dau-don-36-trieu-luot-khach-du-lich-48XRzJZLPG-20022"
-                        title="Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt kh&#225;ch du lịch"
-                      >
-                        Huyện C&#225;t Hải phấn đấu đ&#243;n 3,6 triệu lượt
-                        kh&#225;ch du lịch
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        18
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">7</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/06/chuyenvien_10149/RegisterTinBai\AnhCut06052024-113543.png"
-                      alt="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/ben-pha-dong-bai-di-vao-hoat-dong-tu-thang-3-YmNTlxWlms-20023"
-                        title="Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ th&#225;ng 3"
-                      >
-                        Bến ph&#224; Đồng B&#224;i đi v&#224;o hoạt động từ
-                        th&#225;ng 3
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        18
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">5</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/13/chuyenvien_10149/RegisterTinBai\AnhCut13052024-085949.png"
-                      alt="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/soi-noi-cac-hoat-dong-giao-luu-trong-ngay-hoi-van-hoa-jfkd4bedgS-20027"
-                        title="S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y hội Văn h&#243;a "
-                      >
-                        S&#244;i nổi c&#225;c hoạt động giao lưu trong Ng&#224;y
-                        hội Văn h&#243;a
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        18
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">39</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 news-item-wrapper">
-              <div class="news-item">
-                <div class="d-flex gap-3">
-                  <div class="news-item-img">
-                    <img
-                      src="/Uploads/2024/05/04/chuyenvien_10149/RegisterTinBai\AnhTinBai04052024-035243.png"
-                      alt="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
-                    />
-                  </div>
-                  <div class="news-item-desc">
-                    <div class="news-item-title text-truncate-3">
-                      <a
-                        href="/tin-tuc/hai-phong-tang-gia-tri-trai-nghiem-cho-khach-du-lich-BvQrIP9cqF-20019"
-                        title="Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho kh&#225;ch du lịch"
-                      >
-                        Hải Ph&#242;ng tăng gi&#225; trị trải nghiệm cho
-                        kh&#225;ch du lịch
-                      </a>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/clock-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        class="event-item-content-title"
-                        data-keyconfig="ConLaiHome"
-                      >
-                        8
-                      </div>
-                    </div>
-                    <div class="event-item-content">
-                      <div class="event-item-icon">
-                        <img
-                          src="/DuLichHaiPhong/assets/images/eye-icon-event.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="event-item-content-title">0</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-100 adv">
-            <div class="row g-3">
-              <div class="col-12 col-lg-6 adv-item">
-                <a href="/thu-vien-anh" title="Thư viện ảnh">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/ThuVienAnh.png"
-                    alt="Thư viện ảnh"
-                    class="w-100"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </a>
-              </div>
-              <div class="col-12 col-lg-6 adv-item">
-                <a title="Thư viện ảnh">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/AnPhamDuLich.png"
-                    alt="Ấn phẩm du lịch"
-                    class="w-100"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- News -->
-        <!-- Event -->
-        <div class="col-xl-4 col-lg-11">
-          <div class="guide-title event-title text-start">
-            <a href="/su-kien" title="Sự kiện" data-keyconfig="HomeSuKien">
-              Sự kiện
-            </a>
-          </div>
-
-          <div class="event-item d-flex align-items-center">
-            <div class="event-item-order">1</div>
-            <a
-              href="/su-kien/festival-kinh-khi-cau---bay-len-hai-phong-sang-bung-mien-di-san-ojJJpA4FHK-13"
-              alt="Sự kiện Festival Kinh kh&#237; cầu - Bay l&#234;n Hải Ph&#242;ng! S&#225;ng bừng miền di sản"
-              class=""
-            >
-              <div class="event-item-title text-truncate-2">
-                Festival Kinh kh&#237; cầu - Bay l&#234;n Hải Ph&#242;ng!
-                S&#225;ng bừng miền di sản
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/location-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">Hải Ph&#242;ng</div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/calendar-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
-                  25/05/2025
-                </div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon" style="margin-right: 6px">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/time-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 1
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="event-item d-flex align-items-center">
-            <div class="event-item-order">2</div>
-            <a
-              href="/su-kien/the-cheo-play-xuan-huong-female-artist-premiered-to-the-audience-33kOg9OIB3-19"
-              alt='Sự kiện The Cheo play "Xuan Huong Female Artist" premiered to the audience '
-              class=""
-            >
-              <div class="event-item-title text-truncate-2">
-                The Cheo play &quot;Xuan Huong Female Artist&quot; premiered to
-                the audience
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/location-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">Hai Phong</div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/calendar-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="DayHome">Ngày</span>: 23/05/2024 đến
-                  25/05/2025
-                </div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon" style="margin-right: 6px">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/time-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 1
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="event-item d-flex align-items-center">
-            <div class="event-item-order">3</div>
-            <a
-              href="/su-kien/ban-phao-hoa-no-tam-thap-vao-luc-21h-cac-ngay-thu-bay-chu-nhat-hang-tuan-3At7AiPXuC-5"
-              alt="Sự kiện Bắn ph&#225;o hoa nổ tầm thấp v&#224;o l&#250;c 21h c&#225;c ng&#224;y thứ Bảy, Chủ Nhật h&#224;ng tuần "
-              class=""
-            >
-              <div class="event-item-title text-truncate-2">
-                Bắn ph&#225;o hoa nổ tầm thấp v&#224;o l&#250;c 21h c&#225;c
-                ng&#224;y thứ Bảy, Chủ Nhật h&#224;ng tuần
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/location-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">Hải Ph&#242;ng</div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/calendar-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
-                  21/07/2024
-                </div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon" style="margin-right: 6px">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/time-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 28
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="event-item d-flex align-items-center">
-            <div class="event-item-order">4</div>
-            <a
-              href="/su-kien/khai-mac-le-hoi-truyen-thong-nu-tuong-le-chan-nam-2024-3FAtKoZo2P-7"
-              alt="Sự kiện Khai mạc Lễ hội truyền thống Nữ tướng L&#234; Ch&#226;n năm 2024"
-              class=""
-            >
-              <div class="event-item-title text-truncate-2">
-                Khai mạc Lễ hội truyền thống Nữ tướng L&#234; Ch&#226;n năm 2024
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/location-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">Hải Ph&#242;ng</div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/calendar-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="DayHome">Ngày</span>: 24/05/2024 đến
-                  24/05/2024
-                </div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon" style="margin-right: 6px">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/time-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="ConLaiHome">Còn lại</span>: 5
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="event-item d-flex align-items-center">
-            <div class="event-item-order">5</div>
-            <a
-              href="/su-kien/vo-cheo-“xuan-huong-nu-si”-ra-mat-khan-gia-vao-toi-ngay-27012024-pejF7Pe3eY-11"
-              alt="Sự kiện Vở ch&#232;o “Xu&#226;n Hương nữ sĩ” ra mắt kh&#225;n giả v&#224;o tối ng&#224;y 27/01/2024"
-              class=""
-            >
-              <div class="event-item-title text-truncate-2">
-                Vở ch&#232;o “Xu&#226;n Hương nữ sĩ” ra mắt kh&#225;n giả
-                v&#224;o tối ng&#224;y 27/01/2024
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/location-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">Hải Ph&#242;ng</div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/calendar-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="DayHome">Ngày</span>: 04/05/2024 đến
-                  23/05/2024
-                </div>
-              </div>
-              <div class="event-item-content">
-                <div class="event-item-icon" style="margin-right: 6px">
-                  <img
-                    src="/DuLichHaiPhong/assets/images/time-icon-event.png"
-                    alt=""
-                  />
-                </div>
-                <div class="event-item-content-title">
-                  <span data-keyconfig="ConLaiHome">Còn lại</span>:
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- Event -->
-      </div>
-    </div>
-    <!-- News and Event -->
-    <!-- Hải Phòng trong tôi -->
-    <div class="container-fluid checkin py-5">
-      <div class="container">
-        <div
-          class="guide-title guide-title-checkin"
-          data-keyconfig="HomeHaiPhongTrongToiLa"
-        >
-          Hải Ph&#242;ng trong t&#244;i l&#224;...
-        </div>
-
-        <div class="row g-3">
-          <a
-            class="col-12 col-lg-6 checkin-item position-relative"
-            href="https://www.instagram.com/haiphongtourism/"
-          >
-            <img
-              src="Uploads/QLLinkDoiTuong/anh1.png"
-              alt="Ảnh 1"
-              onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-            />
-            <div class="position-absolute checkin-item-icon">
-              <img
-                src="Uploads/QLLinkDoiTuong/instargram-icon.png"
-                alt="Ảnh 1"
-                onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-              />
-            </div>
-          </a>
-          <div class="col-12 col-lg-6">
-            <div class="row g-3 align-items-stretch">
-              <a
-                class="col-12 checkin-item-2 position-relative"
-                href="https://www.instagram.com/haiphongtourism/"
-              >
-                <img
-                  src="Uploads/QLLinkDoiTuong/anh2.png"
-                  alt="Ảnh 2"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-                <div class="position-absolute checkin-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/instargram-icon17052024-115259.png"
-                    alt="Ảnh 2"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-              </a>
-              <a
-                class="col-6 col-lg-6 checkin-item-3 position-relative"
-                href="https://www.instagram.com/haiphongtourism/"
-              >
-                <img
-                  src="Uploads/QLLinkDoiTuong/anh3.png"
-                  alt="Ảnh 3"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-                <div class="position-absolute checkin-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/youtube-icon.png"
-                    alt="Ảnh 3"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-              </a>
-              <a
-                class="col-6 col-lg-6 checkin-item-3 position-relative"
-                href="https://www.instagram.com/haiphongtourism/"
-              >
-                <img
-                  src="Uploads/QLLinkDoiTuong/anh4.png"
-                  alt="Ảnh 4"
-                  onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                />
-                <div class="position-absolute checkin-item-icon">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/instargram-icon17052024-115334.png"
-                    alt="Ảnh 4"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Hai Phòng trong tôi -->
-    <!-- Potentail  -->
-    <div class="container-fluid potential">
-      <div class="container">
-        <div
-          class="guide-title text-uppercase"
-          data-keyconfig="HomeDoiTacNhaTaiTro"
-        >
-          Đối t&#225;c - nh&#224; t&#224;i trợ
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-12 col-11">
-            <div class="swiper mySwiperPotential">
-              <div class="swiper-wrapper align-items-start">
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/CongTyCoPhanLHF.png"
-                      alt="C&#244;ng ty cổ phần LHF"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">C&#244;ng ty cổ phần LHF</div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/TapDoanSaoDo.png"
-                      alt="Tập đo&#224;n Sao đỏ"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">Tập đo&#224;n Sao đỏ</div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/Eximbank.png"
-                      alt="Ng&#226;n h&#224;ng Eximbank"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">
-                    Ng&#226;n h&#224;ng Eximbank
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/CongTyCoPhanContainer.png"
-                      alt="C&#244;ng ty cổ phần Container"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">
-                    C&#244;ng ty cổ phần Container
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/TrangSucDoji.png"
-                      alt="Trang sức DOJI"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">Trang sức DOJI</div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/CongTyCoPhanCongNghiepSaiGonHaiPhong.png"
-                      alt="C&#244;ng ty cổ phần Khu C&#244;ng nghiệp S&#224;i G&#242;n Hải Ph&#242;ng"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">
-                    C&#244;ng ty cổ phần Khu C&#244;ng nghiệp S&#224;i G&#242;n
-                    Hải Ph&#242;ng
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide d-flex flex-column justify-content-start"
-                >
-                  <div class="potential-img">
-                    <img
-                      src="Uploads/QLLinkDoiTuong/Vingroup.png"
-                      alt="Tập đo&#224;n Vingroup"
-                      onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                    />
-                  </div>
-                  <div class="potential-label">Tập đo&#224;n Vingroup</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Contact and Q&A  -->
-    <div class="container-fluid contact-and-qa">
-      <div class="container" style="padding: 50px 0">
-        <div class="row g-5">
-          <!-- Contact -->
-
-          <style>
-            .style-capcha {
-              display: flex;
-              justify-content: center;
-              width: 100%;
-            }
-          </style>
-
-          <div class="col-lg-6 col-12">
-            <div class="feedback">
-              <div
-                class="guide-title text-uppercase"
-                data-keyconfig="HomePhanAnhGopY"
-              >
-                Phản ánh - góp ý
-              </div>
-              <div style="text-align: center; font-weight: bold">
-                <span
-                  class="text-bold btn-description"
-                  id="thong-bao-gop-y"
-                ></span>
-              </div>
-
-              <form
-                action="/QLLienHeArea/QLLienHe/Create"
-                data-ajax="true"
-                data-ajax-failure="AjaxFormError"
-                data-ajax-method="POST"
-                data-ajax-success="AjaxCreateCauHoiSuccess"
-                enctype="multipart/form-data"
-                id="Formcreatehoi"
-                method="post"
-              >
-                <input
-                  name="__RequestVerificationToken"
-                  type="hidden"
-                  value="BlRuyMdl83ogX7nIBcmOf2mdZFgHNFyBxBRf4W6F_d2Eh7h7ctqs7r-JC5TNtSZjkQeQsFe2DT7J_DznzxGI2M7BPzRjpzFzg-UCEzT7gXjPjnM0LDV9ZeDcdmbOB6-ZLU_-Qqid2wwMCl4mDPzb0A2"
-                />
-                <div class="mb-3 mt-3">
-                  <input
-                    class="form-control required"
-                    data-keyconfig="HomePlaceholderHoTen"
-                    data-val="true"
-                    data-val-required="Vui lòng nhập thông tin này"
-                    id="HoTen"
-                    name="HoTen"
-                    placeholder="Nhập họ tên (*)"
-                    type="text"
-                    value=""
-                  />
-                  <span
-                    class="field-validation-valid text-danger"
-                    data-valmsg-for="HoTen"
-                    data-valmsg-replace="true"
-                  ></span>
-                </div>
-                <div class="mb-3">
-                  <input
-                    class="form-control required"
-                    data-keyconfig="HomePlaceholderEmail"
-                    data-val="true"
-                    data-val-required="Vui lòng nhập thông tin này"
-                    id="Email"
-                    name="Email"
-                    placeholder="Nhập email (*)"
-                    type="text"
-                    value=""
-                  />
-                  <span
-                    class="field-validation-valid text-danger"
-                    data-valmsg-for="Email"
-                    data-valmsg-replace="true"
-                  ></span>
-                </div>
-                <div class="mb-3">
-                  <textarea
-                    class="form-control"
-                    cols="4"
-                    data-keyconfig="HomePlaceholderNoiDungCauHoi"
-                    id="NoiDungCauHoi"
-                    name="NoiDungCauHoi"
-                    placeholder="Nhập nội dung câu hỏi"
-                    rows="3"
-                  ></textarea>
-                  <span
-                    class="field-validation-valid text-danger"
-                    data-valmsg-for="NoiDungCauHoi"
-                    data-valmsg-replace="true"
-                  ></span>
-                </div>
-                <div class="mb-3 d-flex gap-3 contact-captcha">
-                  <input
-                    class="form-control captchaVal"
-                    data-keyconfig="HomePlaceholderCapcha"
-                    id="CaptchaCode"
-                    name="CaptchaCode"
-                    placeholder="* Nhập mã captcha"
-                    type="text"
-                    value=""
-                  />
-                  <span
-                    class="field-validation-valid text-danger"
-                    data-valmsg-for="CaptchaCode"
-                    data-valmsg-replace="true"
-                  ></span>
-
-                  <div
-                    class="BDC_CaptchaDiv"
-                    id="RegistrationCaptcha_CaptchaDiv"
-                    style="width: 285px !important; height: 50px !important"
-                  >
-                    <!--
- -->
-                    <div
-                      class="BDC_CaptchaImageDiv"
-                      id="RegistrationCaptcha_CaptchaImageDiv"
-                      style="width: 255px !important; height: 50px !important"
-                    >
-                      <!--
-   -->
-                      <div
-                        class="BDC_CaptchaImageDiv"
-                        style="width: 255px; height: 40px"
-                      >
-                        <img
-                          class="BDC_CaptchaImage"
-                          id="RegistrationCaptcha_CaptchaImage"
-                          src="/BotDetectCaptcha.ashx?get=image&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
-                          alt="Retype the CAPTCHA code from the image"
-                          style=""
-                        />
-                      </div>
-                      <!--
-   --><a
-                        href="//captcha.org/captcha.html?asp.net"
-                        title="BotDetect CAPTCHA ASP.NET Form Validation"
-                        style="
-                          display: block !important;
-                          height: 10px !important;
-                          margin: 0 !important;
-                          padding: 0 !important;
-                          font-size: 9px !important;
-                          line-height: 10px !important;
-                          visibility: visible !important;
-                          font-family: Verdana, DejaVu Sans, Bitstream Vera Sans,
-                            Verdana Ref, sans-serif !important;
-                          vertical-align: middle !important;
-                          text-align: center !important;
-                          text-decoration: none !important;
-                          background-color: #f8f8f8 !important;
-                          color: #606060 !important;
-                        "
-                        >BotDetect CAPTCHA ASP.NET Form Validation</a
-                      ><!--
- -->
-                    </div>
-                    <!--
- -->
-                    <div
-                      class="BDC_CaptchaIconsDiv"
-                      id="RegistrationCaptcha_CaptchaIconsDiv"
-                      style="width: 24px !important"
-                    >
-                      <!--
-   --><a
-                        class="BDC_ReloadLink"
-                        id="RegistrationCaptcha_ReloadLink"
-                        href="#"
-                        title="Change the CAPTCHA code"
-                        ><img
-                          class="BDC_ReloadIcon"
-                          id="RegistrationCaptcha_ReloadIcon"
-                          src="/BotDetectCaptcha.ashx?get=reload-icon"
-                          alt="Change the CAPTCHA code" /></a
-                      ><!--
-   --><a
-                        class="BDC_SoundLink"
-                        id="RegistrationCaptcha_SoundLink"
-                        href="/BotDetectCaptcha.ashx?get=sound&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
-                        title="Speak the CAPTCHA code"
-                        rel="nofollow"
-                        ><img
-                          class="BDC_SoundIcon"
-                          id="RegistrationCaptcha_SoundIcon"
-                          src="/BotDetectCaptcha.ashx?get=sound-icon"
-                          alt="Speak the CAPTCHA code" /></a
-                      ><!--
-   -->
-                      <div
-                        class="BDC_Placeholder"
-                        id="RegistrationCaptcha_AudioPlaceholder"
-                      >
-                        &nbsp;
-                      </div>
-                      <!--
- -->
-                    </div>
-                    <script
-                      src="/BotDetectCaptcha.ashx?get=script-include&amp;c=RegistrationCaptcha&amp;t=255b95b5fcad4cdb8e394b49cd775cfc"
-                      type="text/javascript"
-                    ></script>
-                    <input
-                      type="hidden"
-                      name="BDC_VCID_RegistrationCaptcha"
-                      id="BDC_VCID_RegistrationCaptcha"
-                      value="255b95b5fcad4cdb8e394b49cd775cfc"
-                    />
-                    <input
-                      type="hidden"
-                      name="BDC_BackWorkaround_RegistrationCaptcha"
-                      id="BDC_BackWorkaround_RegistrationCaptcha"
-                      value="0"
-                    />
-                    <input
-                      type="hidden"
-                      name="BDC_Hs_RegistrationCaptcha"
-                      id="BDC_Hs_RegistrationCaptcha"
-                      value="5dccfea50c3f71dc9e9259d75b43c5d1ec0cb65c"
-                    />
-                    <input
-                      type="hidden"
-                      name="BDC_SP_RegistrationCaptcha"
-                      id="BDC_SP_RegistrationCaptcha"
-                      value="1435456356"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center btn-contact"
-                >
-                  <button
-                    type="submit"
-                    class="btn btn-primary"
-                    data-keyconfig="HomeGuiThongTin"
-                  >
-                    Gửi thông tin
-                  </button>
-                  <span
-                    class="text-bold btn-description"
-                    data-keyconfig="HomeThongTinBaoMat"
-                    >(*mọi thông tin đều được bảo mật)</span
-                  >
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <script src="/Scripts/Common.js"></script>
-          <script src="/DuLichHaiPhong/assets/js/jquery.gritter.min.js"></script>
-
-          <script src="/Scripts/captcha.validate.js"></script>
-
-          <script>
-            addScriptLibrary('/Scripts/jquery.unobtrusive-ajax.min.js');
-            addScriptLibrary('/Scripts/jquery.validate.unobtrusive.min.js');
-            addScriptLibrary('/Scripts/jquery.validate.js');
-
-            function AjaxCreateCauHoiSuccess(rs) {
-              var thongBao = document.getElementById('thong-bao-gop-y');
-
-              if (rs.Status == true) {
-                setTimeout(function () {
-                  location.reload();
-                }, 3000);
-
-                NotiSuccess('Thành công', 'Quý vị đã gửi câu hỏi thành công');
-                thongBao.textContent = 'Quý vị đã gửi câu hỏi thành công';
-                thongBao.classList.remove('text-danger');
-                thongBao.classList.add('text-success');
-              } else {
-                NotiError('Có lỗi', rs.Message);
-
-                thongBao.textContent = 'Có lỗi: ' + rs.Message;
-                thongBao.classList.remove('text-success');
-                thongBao.classList.add('text-danger');
-              }
-            }
-          </script>
-          <!-- Contact -->
-          <!-- Q&A -->
-
-          <div class="col-lg-6 col-12">
-            <div class="qa qa-right">
-              <div
-                class="guide-title text-white text-center text-uppercase qa-title"
-                data-keyconfig="HomeCauHoi"
-              >
-                Hỏi đ&#225;p
-              </div>
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne-1">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne-1"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <span class="text-truncate-1"
-                        >N&#234;n đặt tour khi n&#224;o?</span
-                      >
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne-1"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne-1"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Thời điểm tuyệt vời nhất để bạn đặt tour đ&#243; l&#224;
-                      khi bạn đ&#227; sẵn s&#224;ng cho chuyến du lịch của
-                      m&#236;nh, tham khảo gi&#225; của c&#225;c c&#244;ng ty du
-                      lịch lữ h&#224;nh, v&#224; lựa chọn một c&#244;ng ty du
-                      lịch uy t&#237;n để chuyến bay của bạn thuận lợi v&#224;
-                      an to&#224;n nhất.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne-2">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne-2"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <span class="text-truncate-1"
-                        >N&#234;n l&#224;m g&#236; khi h&#224;nh l&#253; bị
-                        trễ?</span
-                      >
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne-2"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne-2"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Khi bạn đ&#227; đến s&#226;n bay m&#224; h&#224;nh l&#253;
-                      vẫn chưa đến băng chuyền, việc đầu ti&#234;n bạn n&#234;n
-                      l&#224;m đ&#243; l&#224; li&#234;n hệ với nh&#226;n
-                      vi&#234;n h&#224;ng kh&#244;ng, họ sẽ gi&#250;p bạn kiểm
-                      tra m&#227; h&#224;nh l&#253; v&#224; gi&#250;p bạn lấy
-                      lại h&#224;nh l&#253; của m&#236;nh.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne-3">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne-3"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <span class="text-truncate-1"
-                        >N&#234;n đặt kh&#225;ch sạn trước bao l&#226;u?</span
-                      >
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne-3"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne-3"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Khuy&#234;n bạn n&#234;n đặt ph&#242;ng kh&#225;ch sạn
-                      ngay sau khi bạn đ&#227; chốt được lịch cho chuyến đi của
-                      m&#236;nh. Bạn c&#243; thể đặt ph&#242;ng trực tiếp với
-                      kh&#225;ch sạn, hoặc c&#243; thể nhờ đến những c&#244;ng
-                      ty du lịch lữ h&#224;nh để nhận được mức gi&#225; tốt
-                      nhất. Kh&#244;ng n&#234;n đặt ph&#242;ng kh&#225;ch sạn
-                      ngay trước h&#244;m bạn đi, sẽ rất kh&#243; để chọn được
-                      một ph&#242;ng tốt v&#224; được hưởng mức gi&#225; ưu
-                      đ&#227;i từ ph&#237;a kh&#225;ch sạn.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne-4">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne-4"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <span class="text-truncate-1"
-                        >Tạo lịch tr&#236;nh c&#225; nh&#226;n như thế
-                        n&#224;o?</span
-                      >
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne-4"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne-4"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Bước 1: X&#225;c định số lượng th&#224;nh vi&#234;n đi du
-                      lịch. Bước 2: Lựa chọn địa điểm du lịch. Bước 3: Lựa chọn
-                      loại h&#236;nh du lịch. Bước 4: Lựa chọn thời điểm du
-                      lịch. Bước 5: Dự tr&#249; về ng&#226;n s&#225;ch. Bước 6:
-                      T&#236;m hiểu book ph&#242;ng du lịch, v&#233; m&#225;y
-                      bay (nếu cần) Bước 7: L&#234;n lịch tr&#236;nh c&#225;c
-                      điểm đến cần kh&#225;m ph&#225;
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne-5">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne-5"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <span class="text-truncate-1"
-                        >Du lịch ở Hải Ph&#242;ng những điểm n&#224;o chi
-                        ph&#237; kh&#244;ng cao?</span
-                      >
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne-5"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne-5"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Hải Ph&#242;ng, một trong những th&#224;nh phố cảng lớn
-                      nhất Việt Nam, kh&#244;ng chỉ nổi tiếng với vẻ đẹp tự
-                      nhi&#234;n m&#224; c&#242;n c&#243; nhiều điểm du lịch hấp
-                      dẫn với chi ph&#237; hợp l&#253;
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q&A -->
-        </div>
-      </div>
-    </div>
-    <!-- Contact and Q&A   -->
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="playVideoModal"
-      tabindex="-1"
-      aria-labelledby="playVideoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <video style="width: 100%" controls>
-            <source
-              src="/DuLichHaiPhong/assets/Videos/%c4%90o%e1%ba%a1n intro giới thiệu về thành phố Hải Phòng_1080p.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div id="MasterModalFixed" class="modal fade"></div>
-    <div id="MasterModalPreview" class="modal fade" style="z-index: 1052"></div>
-    <div
-      id="MasterModal"
-      class="modal fade"
-      role="dialog"
-      data-keyboard="false"
-      data-backdrop="static"
-      style="z-index: 1051"
-    ></div>
-    <div
-      id="MasterModal2"
-      class="modal fade"
-      role="dialog"
-      data-keyboard="false"
-      data-backdrop="static"
-      style="z-index: 1052"
-    ></div>
-
-    <!-- Chatbox -->
-    <div
-      class="position-fixed"
-      style="bottom: 15px; right: 15px; z-index: 9998"
-    >
-      <a onclick="showChatBox()" class="chatbox-icon shadow">
-        <img src="/DuLichHaiPhong/assets/images/chatbox.png" alt="" />
-      </a>
-    </div>
-
-    <div
-      id="chatbox"
-      class="position-fixed"
-      style="bottom: 110px; right: 40px; z-index: 9999; display: none"
-    >
-      <div class="chat_box shadow">
-        <div class="head_chat_box">
-          <div class="avata_name_chatbox">
-            <img src="/DuLichHaiPhong/assets/images/chatbox-white.png" alt="" />
-            <strong>Cổng thông tin du lịch Hải Phòng</strong>
-          </div>
-          <div class="action_chatbox">
-            <i
-              class="bi bi-x-lg time_chatbox text-white"
-              aria-hidden="true"
-            ></i>
-          </div>
-        </div>
-        <div class="body_chatbox">
-          <div class="content_chatbox"></div>
-          <div class="input_chatbox">
-            <input
-              class="form-control input_ask"
-              placeholder="Anh chị muốn hỏi gì ạ"
-              type="text"
-              value=""
-            />
-            <button onclick="sendAsk()" class="send_ask">
-              <i
-                class="bi bi-send"
-                aria-hidden="true"
-                style="color: var(--color-third)"
-              ></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Chatbox -->
     <!-- Scroll To Top -->
     <button id="myBtnScroll" class="myBtnScroll" title="Lên đầu trang">
       <i class="bi bi-chevron-double-up"></i>
     </button>
     <!-- Scroll To Top -->
-    <!-- Footer -->
-    <div class="container-fluid footer text-white">
-      <div class="container">
-        <div class="row gx-0 justify-content-between gy-5 gy-lg-5">
-          <div class="col-lg-5 fw-bold col-11">
-            <div
-              style="font-size: 16px"
-              class="text-uppercase footer-title"
-              data-keyconfig="footerCongThongTin"
-            >
-              Cổng thông tin du lịch Hải Phòng
-            </div>
-            <div class="footer-line" data-keyconfig="footergiayphep">
-              Giấy phép số 02/GP-TTPT do Sở Thông tin và Truyền thông thành phố
-              Hải Phòng cấp ngày 08/04/2021
-            </div>
-            <div class="footer-line" data-keyconfig="footerdiachi">
-              Địa chỉ: 72 Trần Phú, Ngô Quyền, Hải Phòng
-            </div>
-            <div class="footer-line">
-              <span data-keyconfig="footerdienthoai"
-                >Điện thoại: 0225.229.9799</span
-              >
-              <span class="ms-5" data-keyconfig="footerhotline"
-                >Hotline: 0945.132.599</span
-              >
-            </div>
-            <div class="footer-line" data-keyconfig="footeremail">
-              Email: sodulich@haiphong.gov.vn
-            </div>
-          </div>
-          <div class="col-lg-2 fw-bold col-11 px-5">
-            <div
-              style="font-size: 16px"
-              class="text-uppercase footer-title"
-              data-keyconfig="footerthongke"
-            >
-              THỐNG KÊ
-            </div>
-            <div class="w-100 d-flex justify-content-between footer-line">
-              <span data-keyconfig="footerLuottruycap"
-                >Lượt truy cập hiện tại:</span
-              >
-              <span>1</span>
-            </div>
-            <div class="w-100 d-flex justify-content-between footer-line">
-              <span data-keyconfig="footerHomNay">Hôm nay:</span>
-              <span>215</span>
-            </div>
-            <div class="w-100 d-flex justify-content-between footer-line">
-              <span data-keyconfig="footerTuanNay">Tuần này:</span>
-              <span>946</span>
-            </div>
-            <div class="w-100 d-flex justify-content-between footer-line">
-              <span data-keyconfig="footerTongluot">Tổng lượt truy cập:</span>
-              <span>2847</span>
-            </div>
-          </div>
-          <div class="col-lg-5 fw-bold col-11 ps-4">
-            <div
-              style="font-size: 16px"
-              class="footer-title"
-              data-keyconfig="footertaiungdung"
-            >
-              Li&#234;n kết tải ứng dụng
-            </div>
-            <div class="row" style="margin-top: 20px">
-              <div class="col-lg-6 col-6">
-                <div class="app-download-img">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/google-play-download.png"
-                    alt="Google Play"
-                    class="img-fluid"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-6 col-6">
-                <div class="app-download-img">
-                  <img
-                    src="Uploads/QLLinkDoiTuong/appstore-download.png"
-                    alt="App Store"
-                    class="img-fluid"
-                    onerror="this.src='/DuLichHaiPhong/assets/images/notfoundimage.png'"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="position-fixed"
-      style="bottom: 15px; right: 15px; z-index: 9998"
-    >
-      <a onclick="showChatBox()" class="chatbox-icon">
-        <img src="/DuLichHaiPhong/assets/images/chatbox.png" alt="" />
-      </a>
-    </div>
 
     <!-- Footer -->
-    <div class="modal fade" id="modalMaster"></div>
-    <div class="modal fade" id="modalLogin" data-backdrop="static">
-      <style>
-        .grouplogin {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 20px;
-        }
-
-        .grouplogin a {
-          font-weight: bold;
-        }
-
-        .form-group {
-          margin-bottom: 10px;
-        }
-
-        .btn-submit-login {
-          width: 100%;
-          padding: 5px;
-          font-size: 15px;
-          font-weight: bold;
-          margin-top: 15px;
-        }
-
-        .control-label {
-          font-size: 15px;
-          font-weight: bold;
-        }
-
-        .show-password {
-          right: 12px;
-          top: 9px;
-        }
-      </style>
-      <div class="modal-dialog" style="max-width: 400px">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Đăng nhập hệ thống</h4>
-            <button
-              type="button"
-              class="btn-close"
-              onclick="HideModalLogin()"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div
-              id="error-message"
-              class="text-center text-danger fs-5 fw-bolder mb-3"
-            ></div>
-            <div class="loginForm-Box">
-              <form
-                ReturnUrl=""
-                action="/Account/LoginPartial"
-                class="form-horizontal"
-                data-ajax="true"
-                data-ajax-failure="AjaxFormError"
-                data-ajax-method="POST"
-                data-ajax-success="AjaxFormLoginSuccess"
-                id="loginForm"
-                method="post"
-                role="form"
-              >
-                <input
-                  name="__RequestVerificationToken"
-                  type="hidden"
-                  value="peSGdcfco0KG9DM47K_eJ7YvYsVqP1EgL8DzQqHfjNBpQ2LKutQzJGYdryz4XOKLShMVHI4LxkKK0VSl5tgfL7aXF5Uam7j5yWDyETxpF9ypWGEXXvwgdThGVw5Qbkuufum1wYJOl1zUVWOxbRYsJw2"
-                />
-                <input type="hidden" value="/" name="returnUrl" />
-                <div class="col-sm-12 form-horizontal">
-                  <div class="form-group">
-                    <label class="control-label col-sm-12" for="UserName"
-                      >T&#234;n đăng nhập</label
-                    >
-                    <div class="col-sm-12">
-                      <input
-                        class="form-control"
-                        data-val="true"
-                        data-val-maxlength="Độ dài tối đa là 50 ký tự"
-                        data-val-maxlength-max="50"
-                        data-val-minlength="Độ dài tối thiểu là 3 ký tự"
-                        data-val-minlength-min="3"
-                        data-val-required="Vui lòng nhập thông tin này"
-                        id="UserName"
-                        name="UserName"
-                        type="text"
-                        value=""
-                      />
-                      <span
-                        class="field-validation-valid text-danger"
-                        data-valmsg-for="UserName"
-                        data-valmsg-replace="true"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label col-sm-12" for="Password"
-                      >Mật khẩu</label
-                    >
-                    <div class="col-sm-12 position-relative">
-                      <input
-                        class="form-control"
-                        data-val="true"
-                        data-val-required="Vui lòng nhập thông tin này"
-                        id="Password"
-                        name="Password"
-                        type="password"
-                      />
-                      <i class="fa fa-eye show-password" aria-hidden="true"></i>
-                      <span
-                        class="field-validation-valid text-danger"
-                        data-valmsg-for="Password"
-                        data-valmsg-replace="true"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input
-                        type="submit"
-                        value="Đăng nhập"
-                        class="btn-submit-login btn btn-primary btn-block"
-                      />
-                      <p class="grouplogin">
-                        <a href="/Account/Registerv2"
-                          >Đăng k&#253; t&#224;i khoản</a
-                        >
-                        <a href="/Account/ForgotPassword">Qu&#234;n mật khẩu</a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <center class="container_btn_login_social">
-                    <div
-                      id="g_id_onload"
-                      data-client_id="439782915618-mkmrtftfnm6253nn1orcoeuqpuro71ji.apps.googleusercontent.com"
-                      data-context="signin"
-                      data-ux_mode="popup"
-                      data-login_uri="http://localhost:36006/account/logingoogle"
-                      data-auto_prompt="false"
-                    ></div>
-
-                    <div
-                      class="g_id_signin"
-                      data-type="standard"
-                      data-shape="rectangular"
-                      data-theme="outline"
-                      data-text="signin_with"
-                      data-size="large"
-                      data-locale="vi"
-                      data-logo_alignment="left"
-                    ></div>
-
-                    <div
-                      style="margin-top: 10px; width: 100%"
-                      class="fb-login-button"
-                      data-width=""
-                      data-size="large"
-                      data-button-type="continue_with"
-                      data-layout="default"
-                      data-auto-logout-link="false"
-                      data-use-continue-as="false"
-                      scope="public_profile,email"
-                      onlogin="fbLoginCustom()"
-                    ></div>
-                  </center>
-
-                  <script>
-                    window.fbAsyncInit = function () {
-                      FB.init({
-                        appId: '1156125508861606',
-                        cookie: true,
-                        xfbml: true,
-                        version: 'v19.0',
-                      });
-                      FB.AppEvents.logPageView();
-                    };
-
-                    (function (d, s, id) {
-                      var js,
-                        fjs = d.getElementsByTagName(s)[0];
-                      if (d.getElementById(id)) {
-                        return;
-                      }
-                      js = d.createElement(s);
-                      js.id = id;
-                      js.src = 'https://connect.facebook.net/en_US/sdk.js';
-                      fjs.parentNode.insertBefore(js, fjs);
-                    })(document, 'script', 'facebook-jssdk');
-
-                    function AjaxCall(url, method, data, successCallback) {
-                      $.ajax({
-                        url: url,
-                        method: method,
-                        data: data,
-                        success: successCallback,
-                        error: function (xhr, status, error) {
-                          console.error(xhr.responseText);
-                        },
-                      });
-                    }
-
-                    function AjaxFormSuccess(rs) {
-                      if (rs.Status) {
-                        location.href = '/';
-                      } else {
-                        NotiError('Thất bại', rs.Message);
-                      }
-                    }
-
-                    function fbLoginCustom() {
-                      var token = $(
-                        'input[name="__RequestVerificationToken"]'
-                      ).val();
-                      FB.api(
-                        '/me',
-                        { fields: 'id,name,email' },
-                        function (response) {
-                          console.log(response);
-                          AjaxCall(
-                            '/Account/loginFacebook',
-                            'POST',
-                            {
-                              __RequestVerificationToken: token,
-                              id: response.id,
-                              name: response.name,
-                              email: response.email,
-                            },
-                            AjaxFormSuccess
-                          );
-                        }
-                      );
-                    }
-                  </script>
-                  <script
-                    src="https://accounts.google.com/gsi/client"
-                    async
-                    defer
-                  ></script>
-
-                  <script
-                    async
-                    defer
-                    crossorigin="anonymous"
-                    src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0&appId=1156125508861606"
-                    nonce="UKunLu5w"
-                  ></script>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        addScriptLibrary('/Scripts/jquery.validate.js');
-        addScriptLibrary('/Scripts/jquery.validate.unobtrusive.min.js');
-        addScriptLibrary('/Scripts/jquery.unobtrusive-ajax.min.js');
-
-        function HideModalLogin() {
-          $('#modalLogin').modal('hide');
-        }
-
-        function AjaxFormLoginSuccess(rs) {
-          debugger;
-          if (rs.Status) {
-            //window.location.href = rs.Param;
-            window.location.href = window.location.href;
-          } else {
-            $('#error-message').text(rs.Message);
-          }
-        }
-
-        $('.show-password').click(function () {
-          var passwordInput = $('#Password');
-          var eyeIcon = $(this);
-
-          if (passwordInput.attr('type') === 'password') {
-            passwordInput.attr('type', 'text');
-            eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
-          } else {
-            passwordInput.attr('type', 'password');
-            eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
-          }
-        });
-      </script>
-    </div>
 
     <!-- Swiper JS -->
-    <script src="/DuLichHaiPhong/assets/js/swiper-bundle.min.js"></script>
-    <script src="/DuLichHaiPhong/assets/js/select2.min.js"></script>
-    <link href="/DuLichHaiPhong/assets/css/select2.min.css" rel="stylesheet" />
-    <script src="/DuLichHaiPhong/assets/js/main.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/select2.min.js"></script>
+    <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <script src="/assets/js/mobile.js"></script>
     <script src="/Scripts/jquery.signalR-2.4.1.min.js"></script>
     <script src="/signalr/hubs"></script>
-
-    <script type="text/javascript">
-      $(function () {
-        var routeHub = $.connection.routeHub;
-
-        routeHub.client.routeChanged = function () {
-          $.ajax({
-            type: 'post',
-            url: '/Common/RouteChanged',
-            success: (rs) => {
-              if (rs.Status) {
-                console.log('routeChanged');
-              } else {
-                console.log(rs.Message);
-              }
-            },
-          });
-        };
-
-        // Bắt đầu kết nối
-        $.connection.hub
-          .start()
-          .done(function () {
-            console.log('Kết nối thành công đến hub.');
-          })
-          .fail(function (error) {
-            console.log('Không thể kết nối đến hub: ' + error);
-          });
-      });
-    </script>
-    <script>
-      var swiper = new Swiper('.mySwiperDiscovery', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        // slidesPerView: 5,
-        initialSlide: 3,
-        // spaceBetween: 20,
-        loop: true,
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 0,
-          modifier: 1,
-          slideShadows: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          // when window width is >= 320px
-          320: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          // when window width is >= 480px
-          480: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          // when window width is >= 640px
-          640: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-          // when window width is >= 768px
-          768: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-          },
-        },
-      });
-      var swiper = new Swiper('.mySwiperhero', {
-        spaceBetween: 30,
-        effect: 'fade',
-        autoplay: {
-          delay: 2000,
-        },
-      });
-      var swiper = new Swiper('.mySwiperPotential', {
-        // slidesPerView: 5,
-        // spaceBetween: 30,
-        grabCursor: true,
-        // loop: true,
-        breakpoints: {
-          // when window width is >= 320px
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          // when window width is >= 480px
-          480: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          // when window width is >= 640px
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          // when window width is >= 768px
-          768: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-          },
-        },
-      });
-
-      window.addEventListener('beforeunload', function (event) {
-        // Gửi request đến server khi trình duyệt đóng
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/Home/EndSession', false); // Đổi "/Session/EndSession" thành đường dẫn tương ứng trên server
-        xhr.send();
-      });
-
-      //Chuyển đổi ngôn ngữ
-      $(document).ready(function () {
-        $.ajax({
-          url: '/QLNoiDungChatBotArea/QLNoiDungChatBot/NoiDungChat',
-          type: 'GET',
-          data: null,
-          success: (rs) => {
-            $('.content_chatbox').html(rs);
-          },
-          error: null,
-        });
-
-        changeLang();
-        getNhietDoHomNay();
-      });
-
-      function getNhietDoHomNay() {
-        $.ajax({
-          url: 'https://api.openweathermap.org/data/2.5/forecast?q=Haiphong&appid=bd5e378503939ddaee76f12ad7a97608&units=metric',
-          type: 'GET',
-          data: null,
-          success: (rs) => {
-            var currentTime = new Date();
-            function parseDate(timeString) {
-              return new Date(timeString.replace(' ', 'T'));
-            }
-            var closestObj = rs.list[0];
-            var closestTime = parseDate(closestObj.dt_txt);
-            rs.list.forEach(function (obj) {
-              var objTime = parseDate(obj.dt_txt);
-              if (
-                Math.abs(objTime - currentTime) <
-                Math.abs(closestTime - currentTime)
-              ) {
-                closestObj = obj;
-                closestTime = objTime;
-              }
-            });
-            $('#NhietDoHomNay').html(
-              `<i class="bi bi-cloud-sun-fill"></i> &nbsp; ${closestObj.main.temp}&deg;C`
-            );
-          },
-          error: null,
-        });
-      }
-
-      function SettingLang(key) {
-        event.stopPropagation();
-        event.preventDefault();
-
-        let LanguageLocalStorage = localStorage.getItem('LanguageLocalStorage');
-
-        $.ajax({
-          url:
-            '/ConfigTrangChuArea/ConfigTrangChu/CreateByKey?key=' +
-            key +
-            '&lang=' +
-            LanguageLocalStorage,
-          type: 'GET',
-          data: null,
-          success: (rs) => {
-            $('#MasterModal').html(rs);
-            $('#MasterModal').modal('show');
-          },
-          error: null,
-        });
-      }
-      function changeLang() {
-        var isAllowEdit = 'False'.toLowerCase() == 'true';
-        return new Promise((resolve, reject) => {
-          let LanguageLocalStorage = localStorage.getItem(
-            'LanguageLocalStorage'
-          );
-          if (LanguageLocalStorage) {
-            var pathImg = localStorage.getItem('FlagLanguageLocalStorage');
-            if (pathImg == null || pathImg == '') {
-              pathImg = '/DuLichHaiPhong/assets/images/lang-vn.png';
-            }
-            $('#flagLangSelect').attr('src', pathImg);
-            if (LanguageLocalStorage == 'TiengTrung') {
-              //if (window.location.href == "https://dulichhp-ebizoffice-vn.translate.goog/?_x_tr_sch=http&_x_tr_sl=vi&_x_tr_tl=zh-CN&_x_tr_hl=vi&_x_tr_pto=wapp") {
-              //    return false;
-              //}
-              //window.location.href = "https://dulichhp-ebizoffice-vn.translate.goog/?_x_tr_sch=http&_x_tr_sl=vi&_x_tr_tl=zh-CN&_x_tr_hl=vi&_x_tr_pto=wapp";
-            } else {
-              $.ajax({
-                url: '/ConfigTrangChuArea/ConfigTrangChu/GetAllConfig',
-                type: 'POST',
-                data: { Language: LanguageLocalStorage },
-                success: (rs) => {
-                  // lấy tất cả các phần tử có thuộc tính data-category
-                  let elements = document.querySelectorAll('[data-keyconfig]');
-
-                  // Hiển thị các phần tử đã lọc ra
-                  elements.forEach((el) => {
-                    var key = el.getAttribute('data-keyconfig');
-                    let config = rs.find((p) => p.Key === key);
-                    if (config) {
-                      if (config.TypeConfig == 'BackgroundColor') {
-                        $(el).css('background', config.BackGroundColor);
-                      } else if (config.TypeConfig == 'BackgroundImage') {
-                        $(el).css(
-                          'background-image',
-                          'url(' + config.BackGroundImg + ')'
-                        );
-                      } else if (config.TypeConfig == 'placeholder') {
-                        $(el).attr('placeholder', config.Content);
-                      } else {
-                        $(el).html(config.Content);
-                      }
-                    }
-                    if (isAllowEdit) {
-                      if ($(el).prop('tagName') === 'INPUT') {
-                        $(el).parent().css('position', 'relative');
-                        $(el)
-                          .parent()
-                          .append(
-                            `<span onclick='SettingLang("${key}")' class='config_button config_input'><i class='fa fa-cogs' ></i></span>`
-                          );
-                      } else {
-                        $(el).css('position', 'relative');
-                        $(el).append(
-                          `<span onclick='SettingLang("${key}")' class='config_button'><i class='fa fa-cogs' ></i></span>`
-                        );
-                      }
-                    }
-                  });
-
-                  resolve();
-                },
-                error: () => {
-                  resolve();
-                },
-              });
-            }
-          }
-        });
-      }
-
-      function SetLang(lang, target) {
-        localStorage.setItem('LanguageLocalStorage', lang);
-        localStorage.setItem(
-          'FlagLanguageLocalStorage',
-          $(target).find('img').attr('src')
-        );
-
-        changeLang().then(() => {
-          window.location.href = window.location.href;
-        });
-      }
-    </script>
+    <script src="./main.js"></script>
   </body>
 </html>

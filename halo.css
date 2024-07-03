@@ -1,0 +1,79 @@
+._bc_cbb {
+  position: fixed;
+  z-index: 1070;
+  right: 24px;
+  bottom: 20px;
+}
+
+._bc_cbb {
+  color: #3b3b3b;
+  font-size: 13px;
+  line-height: 14px;
+}
+._bc_cbb ._bc_cbb_btn--chat {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+._bc_cbb ._bc_cbb_btn {
+  background: 0 0;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+._bc_cbb ._bc_cbb_btn--chat ._bc_cbb_btn__underlay {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  animation: cbb-button-underlay 3s infinite;
+  border-radius: 50%;
+}
+
+._bc_cbb ._bc_cbb_btn--chat ._bc_cbb_btn__icon {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: auto;
+}
+
+._bc_cbb ._bc_cbb_btn--chat ._bc_cbb_btn__icon--close {
+  display: none;
+}
+._bc_cbb ._bc_cbb_btn--chat ._bc_cbb_btn__icon {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: auto;
+}
+
+@keyframes cbb-button-underlay {
+  0% {
+    opacity: 0.25;
+    width: 96%;
+    height: 96%;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0;
+    width: 150%;
+    height: 150%;
+  }
+}
